@@ -33,7 +33,7 @@ $posts=$postobj->getAllPost();
 			 <p class="lead">
                 نویسنده: <a href="index.php"><?=$post["Author"]?></a>
             </p>
-			 <p>ساعت ثبت پست:<span class="fa fa-clock"></span><?=$post["Date"]?></p>
+			 <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?=$post["Date"]?></p>
 			 <hr>
             <img class="img-fluid" src="images/<?=$post["Image"]?>" alt="">
             <hr>

@@ -5,8 +5,13 @@
 	include_once "inc/classes/db.php";
 	include_once "inc/classes/Post_Cls.php";
 $postobj= new Post();
-$posts=$postobj->getAllPost();
+//$posts=$postobj->getAllPost();
+if(isset($_POST['SearchSubmit'])){
+	//do search 
+	$posts=$postobj->SearchPost($_POST['SearchQuery']);
+}
 ?>
+
 <!-- Page Content -->
 <div class="container">
 
@@ -63,6 +68,4 @@ $posts=$postobj->getAllPost();
 
         <!-- Blog Sidebar Widgets Column -->
         <?php include "inc/sidebar.php" ?>
-           
-
-<?php include "inc/footer.php" ?>
+           <?php include "inc/footer.php" ?>

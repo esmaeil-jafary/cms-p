@@ -6,12 +6,12 @@
             <h4>Blog Search</h4>
         </div>
         <div class="card-body">
-			<form method="post" action="/phpcms-master/Search.php" >
+			<form method="post" action="/cms-p/Search.php" >
             <div class="input-group">
                 <input name="SearchQuery" type="text" class="form-control">
                 <span class="btn-group">
-                            <button name="SearchSubmit" class="btn btn-primary " type="submit">
-                                <span class="fa fa-search "></span>
+                       <button name="SearchSubmit" class="btn btn-primary " type="submit">
+                      <span class="fa fa-search "></span>
                    </button>
                 </span>
 		    </div>
