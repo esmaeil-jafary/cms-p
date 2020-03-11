@@ -4,7 +4,7 @@
 <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p class="small">Copyright &copy; Your Website 2019 tosinso</p>
+                <p class="small">Copyright &copy; JAFARY</p>
             </div>
             <!-- /.col-lg-12 -->
         </div>

@@ -28,7 +28,7 @@ if(isset($_POST['SearchSubmit'])){
             <!-- First Blog Post -->
            
 			<?php 
-	
+	if(count($posts)>0){
 				foreach($posts as $post){ ?>
 			 
 		 <h2>
@@ -49,6 +49,10 @@ if(isset($_POST['SearchSubmit'])){
             <hr>
 			
 				<?php }
+	}
+			else{
+				echo 'مقادیر جستجو موجود نمی باشد';
+			}
 			?>
             <a class="btn btn-primary" href="#">Read More <span class="fa fa-angle-right"></span></a>
 
