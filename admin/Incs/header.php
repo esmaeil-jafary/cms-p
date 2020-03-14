@@ -1,5 +1,6 @@
 <?php include_once "../inc/classes/db.php" ?>
 <?php include_once "../inc/classes/Categorys_cls.php" ?>
+<?php include_once "../inc/classes/Post_Cls.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 

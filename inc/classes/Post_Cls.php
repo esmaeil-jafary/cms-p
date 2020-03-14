@@ -15,5 +15,24 @@ public function getAllPost(){
 		$Query="select * from Posts where Title like $SearchQuery or Author like $SearchQuery or Content like $SearchQuery or Tage like $SearchQuery ";
 		return $connect->query($Query)->fetchAll(PDO::FETCH_ASSOC);
 	}
+	public function AddPost( $Category_id, $Title,$Author, $Image,$Content, $Tage,$Status) {
+    $cn=$this->connect();
+    $qCategory_id=$cn->quote( $Category_id);
+    $qTitle=$cn->quote($Title);
+    $qAuthor=$cn->quote($Author);
+    $qImage=$cn->quote($Image);
+    $qContent=$cn->quote($Content);
+    $qTage=$cn->quote($Tage);
+    $qStatus=$cn->quote($Status);
+    $query="insert into posts (Category_id , Title , Author , Date , Image , Content , Tage , Comment_Count , Status ) values ( $qCategory_id ,$qTitle,$qAuthor, now() ,$qImage,$qContent,$qTage, 0 ,$qStatus)";
+    $cn->query($query);
 }
+public function DeletePost($PostId){
+    $cn=$this->connect();
+    $qid=$cn->quote($PostId);
+    $query="delete from posts where id=$qid";
+    $cn->query($query);
+}
+}
+
 ?>

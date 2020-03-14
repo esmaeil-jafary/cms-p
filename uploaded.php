@@ -1,3 +1,13 @@
+<?php
+if (isset($_POST["Submit"])) {
+    echo "<pre>";
+    print_r($_FILES);
+    echo "</pre>";
+//    برای اینکه نام عکس را بیاورد و همان را ذخیره کند
+    $FileName=$_FILES["MyFile"]["name"];
+    move_uploaded_file($_FILES["MyFile"]["tmp_name"],"images/$FileName");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

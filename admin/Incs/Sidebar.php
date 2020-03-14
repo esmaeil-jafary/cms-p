@@ -5,8 +5,8 @@
 			<span>پست ها</span> 
 		</a>
 		<div class="dropdown-menu" aria-labelledby="post-dropdown">
-			<a href="#" class="dropdown-item">نمایش تمامی پست ها</a>
-			<a href="#" class="dropdown-item"> اضافه کردن پست </a>
+			<a href="Post.php" class="dropdown-item">نمایش تمامی پست ها</a>
+			<a href="Post.php?Type=NewPost" class="dropdown-item"> اضافه کردن پست </a>
 		</div>
 	</li>
 	<li class="nav-item">
