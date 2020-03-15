@@ -1,3 +1,4 @@
+
 <?php
 $Postobj=new Post();
 if (isset($_GET["Delete"])){
@@ -8,12 +9,14 @@ if (isset($_GET["Delete"])){
     header("location:$PageName");
 }
 $posts=$Postobj->getAllPost();
+//برای اینکه بجای کد خود کتگوری را نمایش دهد
+$CatObj=new Category();
 
 ?>
 <table id="PostTable" class="table table-bordered table-hover">
     <thead>
     <tr>
-        <th>کد دسته بندی ه</th>
+        <th> دسته ها  </th>
         <th>تیر</th>
         <th>نویسنده</th>
         <th>زمان</th>
@@ -22,6 +25,7 @@ $posts=$Postobj->getAllPost();
         <th>تگ ها</th>
         <th>status</th>
         <th>شمارش محتوا </th>
+        <th>ویرایش</th>
         <th>حذف</th>
     </tr>
     </thead>
@@ -30,7 +34,11 @@ $posts=$Postobj->getAllPost();
     <?php
     foreach ($posts as $post){ ?>
         <tr>
-            <td><?=$post["Category_id"]?></td>
+<!--            برای اینکه نام کتگوری را بیاوریم بجای کد آن-->
+            <td><?php
+$cat=$CatObj->getCategory($post["Category_id"]);
+echo $cat[0]["name"];
+                ?></td>
             <td><?=$post["Title"]?></td>
             <td><?=$post["Author"]?></td>
             <td><?=$post["Date"]?></td>
@@ -40,6 +48,8 @@ $posts=$Postobj->getAllPost();
             <td><?=$post["Tage"]?></td>
             <td><?=$post["Comment_Count"]?></td>
             <td><?=$post["Status"]?></td>
+<!--            برای اینکه برود به صفحه ادیت پست به شکل زیر می نویسیم.دیلیت چون در این صفحه است نیازی نیست به این شکل بنویسیم-->
+            <td><a href="?Type=EditPost&Pid=<?=$post["id"]?>" class="btn btn-primary">ویرایش</a></td>
             <td><a href="?Delete=<?=$post["id"]?>" class="btn btn-danger">حذفف</a></td>
         </tr>
     <?php }
