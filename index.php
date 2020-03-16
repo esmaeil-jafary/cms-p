@@ -5,7 +5,17 @@
 	include_once "inc/classes/db.php";
 	include_once "inc/classes/Post_Cls.php";
 $postobj= new Post();
-$posts=$postobj->getAllPost();
+//اگر شرط ایف را نگذاریم تمام کتگوری ها نمایش میدهد ولی ما میخواهیم فقط کتگوری مورد نظر نمایش داده شو
+if (isset($_GET["catid"])){
+//    قبلا گت ال کتگوری گذاشته بودیم که همه را نشان می داد ولی الان شرط می گذاریم
+//    باید بگوییم ای دی خواصی که می فرستیم
+$posts=$postobj->GetPosts($_GET["catid"]);
+}else{
+//    تمام پست ها
+    $posts=$postobj->getAllPost();
+}
+
+
 ?>
 <!-- Page Content -->
 <div class="container">
@@ -27,7 +37,8 @@ $posts=$postobj->getAllPost();
 				foreach($posts as $post){ ?>
 			 
 		 <h2>
-                <a href="#"><?=$post["Title"]?></a>
+<!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
+                <a href="Post.php?Pid=<?=$post["id"]?>"><?=$post["Title"]?></a>
             </h2>
 			
 			 <p class="lead">
@@ -37,9 +48,10 @@ $posts=$postobj->getAllPost();
 			 <hr>
             <img class="img-fluid" src="images/<?=$post["Image"]?>" alt="">
             <hr>
-			<p><?=$post["Content"]?></p>
-			 
-            <a class="btn btn-primary" href="#">Read More <span class="fa fa-angle-right"></span></a>
+<!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
+			<p><?=substr($post["Content"],0,100)?></p>
+<!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
+            <a class="btn btn-primary" href="Post.php?Pid=<?=$post["id"]?>">Read More <span class="fa fa-angle-right"></span></a>
 
             <hr>
 			

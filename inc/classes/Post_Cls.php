@@ -67,6 +67,13 @@ class Post extends DB
         $query = "update posts set Title=$qTitle , Category_id=$qCategory_id ,  Author=$qAuthor ,  Image=$qImage , Content=$qContent , Tage=$qTage , Status=$qStatus where id=$qId ";
         $cn->query($query);
     }
+
+    public function GetPosts($catid)
+    {
+        $cn=$this->connect();
+        $qcatId=$cn->quote($catid);
+        return $this->connect()->query("select * from posts where Category_id=$qcatId")->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>

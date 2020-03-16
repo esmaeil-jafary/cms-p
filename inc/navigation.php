@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-md-3">
-    <a class="navbar-brand" href="#">CMS Site</a>
+    <a class="navbar-brand" href="index.php">صفحه اصلی</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

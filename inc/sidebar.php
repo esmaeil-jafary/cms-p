@@ -39,7 +39,8 @@
                     <ul class="list-unstyled">
 		<?php				
       for($i=0;$i<=$cnt/2;$i++){ ?>
-       <li><a href="#"><?=$cats[$i]["name"]?></a></li>
+<!--          الان برای اینکه وقتی در دسته بندی ها را در سایدبار کلیک می کنیم برود بر بروی آن دسته لینک تگ ا را قرا می دیهی-->
+       <li><a href="index.php?catid=<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
       <?php } ?>
              </ul>
                 </div>
@@ -47,9 +48,11 @@
                     <ul class="list-unstyled">
                         <!-- نمایش گتگوری در دو ستون و اینجا ستون دوم -->
                         <?php
-                        for ($i<$cnt/2;$i<$cnt;$i++) { ?>
-                        <li><a href="#"><?=$cats[$i]["name"]?></a></li>
-                    <?php   }
+                        for ($i = $cnt/2 + 1 ; $i < $cnt ; $i++) {
+//                            ی دسته بندی دوم هم مانند بالا انجام
+                            $href="index.php?catid={$cats[$i]["id"] } " ;
+                      echo ' <li><a href="'.$href.'"> ' . $cats[$i]["name"]. '</a> </li>';
+                      }
                         ?>
                     </ul>
                 </div>

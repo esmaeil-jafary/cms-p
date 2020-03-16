@@ -7,7 +7,7 @@ if (isset($_GET["Pid"]))
 //اول باید برویم کلاس پست نمایش از دیتا بیس را اوکی کنیم
 
 //الان ای دی را میگیرد
-$CurrentPost = $PostObj->GetPost($_GET["Pid"]);
+    $CurrentPost = $PostObj->GetPost($_GET["Pid"]);
 //برای ادیت کردن و دستور آپدیت
 }
 if (isset($_POST["SubmitEditPost"]))
@@ -19,12 +19,15 @@ if (isset($_POST["SubmitEditPost"]))
     }else{
         $PostObj->UpdatePost($_POST["id"],$_POST["Title"],$_POST["Category_id"], $_POST["Author"] ,$_POST["LastImage"], $_POST["Content"],$_POST["Tage"],$_POST["Status"]);
     }
-
-$pagename= $_SERVER["PHP_SELF"];
-    header("location : $pagename" );
+//خطا می دهد نمیدانم چرا
+////
+//    $PageName=$_SERVER["PHP_SELF"];
+//    header("location:post.php");
+    $PageName=$_SERVER["PHP_SELF"];
+    header("location:post.php");
 }
 ?>
-<form method="post" action="" enctype="multipart/form-data">
+<form action="" method="post"  enctype="multipart/form-data">
     <div class="form-group">
         <label for="Title">تیتر:</label>
         <input type="text" class="form-control" name="Title" id="Title" value=" <?=$CurrentPost[0]["Title"]?>">
@@ -53,7 +56,7 @@ $pagename= $_SERVER["PHP_SELF"];
     </div>
 
     <div class="form-group">
-<!--        با استفاده از کارنت پست میتوانیم از دیتا بیس نمایش دهیم با ولیو-->
+        <!--        با استفاده از کارنت پست میتوانیم از دیتا بیس نمایش دهیم با ولیو-->
         <label for="Author">نویسنده:</label>
         <input type="text" class="form-control" name="Author" id="Author" value=" <?=$CurrentPost[0]["Author"]?>">
     </div>
@@ -67,7 +70,7 @@ $pagename= $_SERVER["PHP_SELF"];
     <div class="form-group">
         <label for="Content">محتوا</label>
         <!--        از تکست اریا استفاده می کنیم چون طول ان بیشتر است-->
-<!--        برای تکست اریا برای نمایش از دیتا بیس ولیو نیازی نیست-->
+        <!--        برای تکست اریا برای نمایش از دیتا بیس ولیو نیازی نیست-->
         <textarea cols="30" rows="10" class="form-control" name="Content" id="Content"><?=$CurrentPost[0]["Content"]?></textarea>
     </div>
     <div class="form-group">
@@ -77,11 +80,11 @@ $pagename= $_SERVER["PHP_SELF"];
     <input type="hidden" name="id" value="<?=$CurrentPost[0]["id"] ?>">
     <input type="hidden" name="LastImage" value="<?=$CurrentPost[0]["Image"] ?>">
     <div class="form-group">
-<!--        برای ادیت کردن به ایدی نیاز داریم که آن را هیدن قرار می دهیم-->
+        <!--        برای ادیت کردن به ایدی نیاز داریم که آن را هیدن قرار می دهیم-->
         <label for="Title">استتوس</label>
         <input type="text" class="form-control" name="Status" id="Status" value=" <?=$CurrentPost[0]["Status"]?>">
     </div>
 
-    <input type="submit" name="SubmitEditPost" value="ویرایش " class="btn btn-lg btn-primary">
+    <input type="submit" name="SubmitEditPost" value="اعمال ویرایش " class="btn btn-lg btn-primary">
 
 </form>
