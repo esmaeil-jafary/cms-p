@@ -10,12 +10,13 @@ if (isset($_GET["Pid"])) {
     $post = $postobj->GetPost($_GET["Pid"]) [0];
 }
 //برای ثبت کامنت
-if (isset($_POST["SendComment"])){
+$CommentObj=new Comment();
+if (isset($_POST["SendComment"])) {
     $Author=$_POST["Author"];
     $Email=$_POST["Email"];
-    $Content=$_POST["Comment"];
+    $Content=$_POST["Content"];
     $PostId=$_GET["Pid"];
-    $CommentObj=new Comment();
+
    $PostComment=$CommentObj->AddComment($Author,$Email,$Content,$PostId);
 }
 //الان می خواهیم فقط کامنت های مربوط به پست مورد نظر لود بشو
@@ -59,33 +60,45 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
                         </div>
                         <div class="input-group">
                             <label for="Content">محتوا</label>
-                            <textarea name="Comment" class="form-group"></textarea>
+                            <textarea name="Content" class="form-group"></textarea>
                             <span class="btn-group">
                       
                       <span class="fa fa-search "></span>
                    </button>
                 </span>
-                        </div>
+            </div>
 <!--                        مارجین تاپ 3-->
                         <div class="form-group mt-3">
                         <input type="submit" name="SendComment" class="btn btn-lg btn-primary" value="ارسال کامنت">
                         </div>
                     </form>
                 </div>
+    </div>
+</div>
+
                 <!-- /.input-group -->
-            </div>
 <!--            یک حلقه ایجاد مکنیم تا کامنت ها را نمایش دهیم-->
             <?php
-            foreach ($PostComment as $Comment){ ?>
-            <div class="row">
-                <span class="font-weight-bolder"><?=$Comment["Author"]?></span>
-                <span><?=$Comment["Email"]?></span>
-                <p><span><?=$Comment["Content"]?></span></p>
+            foreach ($PostComment as $Comment) { ?>
 
-            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                            <span class="font-weight-bolder p-3"><?= $Comment["Author"] ?></span>
+                            <div>
+                                <span class="smalle"><?= $Comment["Date"] ?></span><br>
+                               <span class=""><?= $Comment["Content"] ?></span>
+                            </div>
+
+                        </div>
+                    </div>
             <?php }
             ?>
-        </div>
+
+
+
+
+
         <!-- Blog Sidebar Widgets Column -->
         <?php include "inc/sidebar.php" ?>
         <?php include "inc/footer.php" ?>

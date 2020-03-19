@@ -23,8 +23,8 @@ $CatObj=new Category();
         <th>عکس ها</th>
         <th>محتوای دسته بندی ها</th>
         <th>تگ ها</th>
-        <th>status</th>
         <th>شمارش محتوا </th>
+        <th>status</th>
         <th>ویرایش</th>
         <th>حذف</th>
     </tr>

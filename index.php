@@ -33,8 +33,14 @@ $posts=$postobj->GetPosts($_GET["catid"]);
             <!-- First Blog Post -->
            
 			<?php 
-	
-				foreach($posts as $post){ ?>
+//	برای اینکه فقط پستهایی که پابلیش شده اند را نمایش دهد ددر صفحه اصلی
+				foreach($posts as $post) {
+				    if ($post["Status"] != "publish") {
+//				        اجرا نکن
+                continue;
+                    }
+				    ?>
+
 			 
 		 <h2>
 <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->

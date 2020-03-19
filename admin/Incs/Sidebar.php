@@ -16,7 +16,7 @@
 		
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="#">
+		<a class="nav-link" href="Comment.php">
 			<i class="fas fa-fw fa-comment-alt"></i>
 			<span> کامنت ها </span> 
 		</a>

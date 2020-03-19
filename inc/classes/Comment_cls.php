@@ -13,8 +13,12 @@ public function getAllComment(){
     {
         $cn=$this->connect();
         $qId=$cn->quote($id);
-        $cn->query("delete from comments where id=$qId");
 
+//        برای اینکه وقتب کامنتی را ÷اک می کمنیم از کامنت کانت ÷اک کند
+//وچون برای پاک کردن کامنت کانت نیاز به پوست ادی می باشد می نوسیم
+        $PostId=$cn->query("select * from comments where id=$qId")->fetchAll(PDO::FETCH_ASSOC)[0]["Post_id"];
+        $cn->query("update posts set Comment_Count=Comment_Count-1 where id=$PostId");
+        $cn->query("delete from comments where id=$qId");
     }
 
     public function ChangeStatus($id)
@@ -28,17 +32,20 @@ public function getAllComment(){
     public function AddComment($Author, $Email, $Content, $PostId)
     {
         $cn=$this->connect();
-        $qAuthor=$cn->quote($Author);
-        $qEmail=$cn->quote($Email);
-        $qContent=$cn->quote($Content);
-        $qPostId=$cn->quote($PostId);
-        $cn->query("insert into comments (Post_id,Author,Email,Content,Status,Date) values ($qPostId,$qAuthor,$qEmail,$qContent,0,now())");
+        $Author=$cn->quote($Author);
+        $Email=$cn->quote($Email);
+        $Content=$cn->quote($Content);
+        $PostId=$cn->quote($PostId);
+        $cn->query("insert into comments (Post_id,Author,Email,Content,Status,Date) values ($PostId,$Author,$Email,$Content,0,now())");
+//        برای اینکه هر کامنتی اضافه شد آن را کامنت کانت بشمرد می نوسیم
+       $cn->query("update posts set Comment_Count=Comment_Count+1 where id=$PostId");
     }
     public function GetPostComment($Pid) {
         $cn=$this->connect();
         $qId=$cn->quote($Pid);
 //        الاا می خواهیم از کل کامنت ها آن کامنتی که تایید شده را نشان بدهیم که استتوس را برابر 1 قرار می دهیم
-        $query="select * from comments where Status=1 and Post_id = $qId";
+//        برای اینکه کامنتها را به ترتیب اخرین پست نمایش دهد آن را دیسیندین می کمنینم
+        $query="select * from comments where Status=1 and Post_id = $qId order by Date desc ";
         return $cn->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
