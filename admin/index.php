@@ -20,7 +20,7 @@
           </li>
           <li class="breadcrumb-item active">مدیر</li>
         </ol>
-
+        <h1> خوش آمدی: <?=$_SESSION["FirstName"]." ".$_SESSION["LastName"]?></h1>
         <!-- Icon Cards-->
         
 

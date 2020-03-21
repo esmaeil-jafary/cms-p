@@ -17,18 +17,16 @@
                 <a class="nav-link" href="#">Pricing</a>
             </li> -->
             <?php
-            include_once "inc/classes/db.php" ;
-            include_once "inc/classes/Categorys_cls.php" ;
             $cat=new Category ();
             $cats=$cat->getAllCategories();
             foreach ($cats as $c) {
                 ?>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><?=$c["name"]?><a/>
-            </li>
-            
-            <?php 
-            } 
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><?=$c["name"]?><a/>
+                </li>
+
+                <?php
+            }
             ?>
 			<li class="nav-item ">
 				<a class="nav-link" href="admin">Admin</a>

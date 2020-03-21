@@ -28,7 +28,8 @@
           <span>کاربرها</span>
         </a>
 		  <div class="dropdown-menu" aria-labelledby="user-dropdown">
-			
+              <a href="User.php" class="dropdown-item">نمایش تمامی کاربران ها</a>
+              <a href="User.php?type=NewUser" class="dropdown-item"> اضافه کردن کاربران </a>
 		</div>
       </li>
 	 <li class="nav-item ">

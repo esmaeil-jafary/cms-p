@@ -26,7 +26,10 @@
           <a class="dropdown-item" href="#">پروفایل</a>
          
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">خروج</a>
+<!--            فعلا که مودال ها را نخوانده ایم لاگ آف را خودمان مینویسیم موقت-->
+            <a class="dropdown-item" href="../Login.php?Logout=1">خروج</a>
+<!--            حالا باید برویم در صفحه لاگین و باسیشن انجام بدهیم-->
+<!--          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">خروج</a>-->
         </div>
       </li>
     </ul>

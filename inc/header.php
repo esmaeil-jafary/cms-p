@@ -1,3 +1,10 @@
+<?php
+include_once "inc/classes/db.php" ;
+include_once "inc/classes/Categorys_cls.php" ;
+
+
+include_once "inc/classes/User_Cls.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
