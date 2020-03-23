@@ -60,6 +60,22 @@ if (isset($_POST["SubmitEditPost"]))
         <label for="Author">نویسنده:</label>
         <input type="text" class="form-control" name="Author" id="Author" value=" <?=$CurrentPost[0]["Author"]?>">
     </div>
+    <div class="form-group">
+        <label for="Title">استتوس</label>
+        <select name="Status" id="Status" class="form-control" required>
+            <?php
+            if ($CurrentPost[0]["Status"]=="Draft"){ ?>
+                <option value="Draft" selected>draft</option>
+                <option value="Publish">Publish</option>
+            <?php } else{ ?>
+                <option value="Draft">draft</option>
+                <option value="Publish" selected>Publish</option>
+            <?php }
+            ?>
+
+        </select>
+
+    </div>
     <img src="../images/<?=$CurrentPost[0]['Image']?>" width="100">
     <div class="form-group">
 
@@ -79,11 +95,7 @@ if (isset($_POST["SubmitEditPost"]))
     </div>
     <input type="hidden" name="id" value="<?=$CurrentPost[0]["id"] ?>">
     <input type="hidden" name="LastImage" value="<?=$CurrentPost[0]["Image"] ?>">
-    <div class="form-group">
-        <!--        برای ادیت کردن به ایدی نیاز داریم که آن را هیدن قرار می دهیم-->
-        <label for="Title">استتوس</label>
-        <input type="text" class="form-control" name="Status" id="Status" value=" <?=$CurrentPost[0]["Status"]?>">
-    </div>
+
 
     <input type="submit" name="SubmitEditPost" value="اعمال ویرایش " class="btn btn-lg btn-primary">
 

@@ -61,4 +61,5 @@ function getPostCount() {
         return $result[0]["cnt"];
 
     }
+
 }

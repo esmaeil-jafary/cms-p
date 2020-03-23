@@ -69,7 +69,11 @@ header("location:post.php");
 <!--    </div>-->
     <div class="form-group">
         <label for="Title">استتوس</label>
-        <input type="text" class="form-control" name="Status" id="Status">
+        <select name="Status" id="Status" class="form-control" required>
+            <option value="Draft">draft</option>
+            <option value="Draft">Publish</option>
+        </select>
+
     </div>
 
     <input type="submit" name="SubmitNewPost" value="ثبت" class="btn btn-lg btn-primary">

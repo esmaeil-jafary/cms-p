@@ -12,10 +12,54 @@ $posts=$Postobj->getAllPost();
 //برای اینکه بجای کد خود کتگوری را نمایش دهد
 $CatObj=new Category();
 
+//الان می گوییم اگر در عملیات دسته جمعی اگر بر روی دکمه کلیک شده بود
+if (isset($_POST['bulkSubmit'])){
+//    برای اینکه اگر چک باکس را تیک نکرده بودیم خطا ندهد یک شرط دیگر می گذاریم
+    if (!isset($_POST['Cheacks'])){
+        echo "هیچ آیتمی انتخاب نشده است";
+    }else{
+//        برای اینکه مشخص کنیم کدام آیتم انتخاب شده از سوییچ استفاده می کنیم
+        switch ($_POST['OperationType']){
+            case 'Publish':
+                $Postobj->ChangePostStatus($_POST['Cheacks'],"Publish");
+                break;
+            case 'Draft':
+                $Postobj->ChangePostStatus($_POST['Cheacks'],"Draft");
+                break;
+            case 'Delete':
+                $Postobj->ِDeleteBulkPosts($_POST['Cheacks']);
+                break;
+        }
+        $PageName=$_SERVER["PHP_SELF"];
+        header("location:$PageName");
+    }
+
+}
 ?>
+<!--برای ایجاد عملیات گروهی یک فرم طراحی می کنیم-->
+<form method="post" action="">
+    <div class="row">
+        <div class="col-md-3">
+<!--            ریکوایر برای ولیدیشن کردن میباشد-->
+    <select class="form-control" name="OperationType" required>
+<!--        الان برای عملیات گروهی پست ها حذف کردم پابلیسش و درفت را اضافه می کنیم-->
+        <option value="">لطفا انتخاب کنید</option>
+        <option value="Publish">تایید کردن پست ها</option>
+        <option value="Draft">لغو پست ها</option>
+        <option value="Delete">حذف پست ها</option>
+    </select>
+    </div>
+
+    <div class="col-md-3">
+    <input type="submit" name="bulkSubmit" value="Apply" class="btn btn-success">
+        <a href="?Type=NewPost" class="btn btn-primary">AddNew</a>
+    </div>
+    </div>
 <table id="PostTable" class="table table-bordered table-hover">
     <thead>
     <tr>
+<!--        الان باید با جی کوری و جاوا اسکریپت یک چک آل یعنی انتخاب همه درست می کنیم-->
+        <td><input type="checkbox" id="BulkCheachBoxHeader"></td>
         <th> دسته ها  </th>
         <th>تیر</th>
         <th>نویسنده</th>
@@ -34,12 +78,15 @@ $CatObj=new Category();
     <?php
     foreach ($posts as $post){ ?>
         <tr>
-<!--            برای اینکه نام کتگوری را بیاوریم بجای کد آن-->
+<!--            برای اینکه جای تیک درست کنیم برای عملیات گروهی در پنل ادمین-->
+<!--            برای اینکه نام کتگوری را بیاوریم بجای کد آن و همچنین چون نام آن برای همه چک باکس ها می باشد باید آن را در ارایه بگذارریم-->
+<!--            یک کلاس پست چک می دهیم به ان و در پایین در جی کوری استفاده می کنیم ازآن-->
+            <td><input class="post_check" type="checkbox" value="<?=$post["id"]?>" name="Cheacks[]"></td>
             <td><?php
 $cat=$CatObj->getCategory($post["Category_id"]);
 echo $cat[0]["name"];
                 ?></td>
-            <td><a href="../Post.php?Pid=<?=$post["id"]?>"> <?=$post["Title"]?></a></td>
+            <td><a href="../Post.php?Pid=<?=$post["id"]?>"><?=$post["Title"]?></a></td>
             <td><?=$post["Author"]?></td>
             <td><?=$post["Date"]?></td>
             <!--            برای اینکه خود عکس را نشان دهد-->
@@ -57,3 +104,21 @@ echo $cat[0]["name"];
 
     </tbody>
 </table>
+</form>
+<!--کد جاوا و جیکوری برای دکمه چک آل و انتخاب همه-->
+
+<script>
+    $(document).ready(function (){
+$('#BulkCheachBoxHeader').click(function (){
+if ( this.checked) {
+$('.post_check').each(function (){
+this.cheacked=true
+})
+} else {
+    $('.post_check').each(function (){
+        this.cheacked=false;
+    })
+}
+})
+    })
+</script>

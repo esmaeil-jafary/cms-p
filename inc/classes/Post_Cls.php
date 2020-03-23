@@ -74,6 +74,24 @@ class Post extends DB
         $qcatId=$cn->quote($catid);
         return $this->connect()->query("select * from posts where Category_id=$qcatId")->fetchAll(PDO::FETCH_ASSOC);
     }
+    //    برای ایجاد عملیات گروهی دوتا متغیر می دهیم تا استتوس آن را عوض کند
+//از تابع این وقتی استفاده می شود که بخواهیم مثلا خانه یک و چهر و پنج  را بخواهیم
+//برای تبدیل ارایه ای که چند تا خانه دارد به این حالت از تابع جوین استفاده می شود
+//یعنی چون ما قبلا  از حلقه استفاده می کردیم همه ایدی عا را چک می کزرد ولی الان ما می خوااهیم بگوییم فقط این آیدی هایی که مدنظر ماست را بیاور
+
+    public function ChangePostStatus($ar,$Status )
+    {
+        $JoinedAr=join(",",$ar);
+        $query="update posts set Status='$Status' where id in ($JoinedAr)";
+        $this->connect()->query($query);
+    }
+//    برای دیلیت کردن اگر ما داخل حلقه بگذاریم وقتی تعدد زیاد شود دیر عمل میکند که برای رفع مشکل این کوری را می نویسیم
+    public function ِDeleteBulkPosts($ar)
+    {
+        $JoinedAr=join(",",$ar);
+        $query="delete from posts where id in ($JoinedAr)";
+        $this->connect()->query($query);
+    }
 }
 
 ?>

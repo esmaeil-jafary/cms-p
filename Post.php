@@ -52,15 +52,15 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
 <!--                        برای قسمت کامنت گذاشتن چند بخش ایجاد می کنیم مانند محتوا و ایمیل و غیره-->
                         <div class="form-group">
                             <label>نویسنده:</label>
-                            <input type="text" class="form-control" name="Author">
+                            <input type="text" class="form-control" name="Author" required>
                         </div>
                         <div class="form-group">
                             <label for="">ایمیل</label>
-                            <input type="email" class="form-control" name="Email">
+                            <input type="email" class="form-control" name="Email" required>
                         </div>
                         <div class="input-group">
                             <label for="Content">محتوا</label>
-                            <textarea name="Content" class="form-group"></textarea>
+                            <textarea name="Content" class="form-group" required></textarea>
                             <span class="btn-group">
                       
                       <span class="fa fa-search "></span>
