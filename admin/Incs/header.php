@@ -6,6 +6,9 @@ include_once "../inc/classes/Categorys_cls.php";
 include_once "../inc/classes/Post_Cls.php";
 include_once "../inc/classes/Comment_Cls.php";
 include_once "../inc/classes/User_Cls.php";
+include_once "../inc/classes/Report_Cls.php";
+
+
 //الان چون درصفحه لاگین سیژن را استارت کرده ایم می توانیم اطلعات دیتابیس را با سیژن بفرستیم مثل نام و نام خاوادگی و ..
 session_start();
 //الان باید رول را برسی کنیم تا اگر ادمین نیست نتواند ورود کند و به ایندکس برگردانده شود
@@ -41,3 +44,5 @@ if (!isset($_SESSION["Rol"]) || $_SESSION["Rol"] !="Admin"){
 </head>
 
 <body id="page-top">
+<script src="/cms-p/vendor/jquery/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>

@@ -53,10 +53,10 @@ class User extends DB
     {
         $cn = $this->connect();
         $UserName = $cn->quote($UserName);
-       /* $all=*/return $cn->query("select * from users where Username=$UserName")->fetchAll(PDO::FETCH_ASSOC);
-//     if (count($all) > 0) {
-//         return $all[0];
-//     } else return null;
+        $all= $cn->query("select * from users where Username=$UserName")->fetchAll(PDO::FETCH_ASSOC);
+    if (count($all) > 0) {
+         return $all[0];
+     } else return null;
 
     }
 }

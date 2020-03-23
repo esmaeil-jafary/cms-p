@@ -40,7 +40,7 @@
     </div>
   </div>
 
-<script src="/cms-p/vendor/jquery/jquery.min.js"></script>
+
   <script src="/cms-p/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -58,6 +58,13 @@
   <!-- Demo scripts for this page-->
   <script src="../js/demo/datatables-demo.js"></script>
   <script src="../js/demo/chart-area-demo.js"></script>
+
+
+<!--  برای چارت هستن-->
+
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 </body>
 

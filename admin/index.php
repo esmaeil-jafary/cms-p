@@ -1,8 +1,10 @@
 <?php include "Incs/header.php" ?>
 <?php include "Incs/Navigation.php" ?>
+<?php
+$ReportObj=new Report();
+?>
 
 
-  
 
   <div id="wrapper">
 
@@ -22,9 +24,9 @@
         </ol>
         <h1> خوش آمدی: <?=$_SESSION["FirstName"]." ".$_SESSION["LastName"]?></h1>
         <!-- Icon Cards-->
-        
 
-      
+
+
 
       </div>
       <!-- /.container-fluid -->
@@ -41,7 +43,7 @@
                                 <i class="fa fa-file fa-5x " aria-hidden="true"></i>
                             </div>
                             <div class="col-md-9 text-right">
-                                <div class='h2'>1</div>
+                                <div class='h2'><?=$ReportObj->getPostCount()?></div>
                                 <div>پست ها</div>
                             </div>
                         </div>
@@ -69,7 +71,7 @@
                             <i class="fa fa-comment fa-5x"></i>
                         </div>
                         <div class="col-md-9 text-right">
-                            <div class="h2">2</div>
+                            <div class="h2"><?=$ReportObj->getCommentCount()?></div>
                             <div> کامنت ها</div>
                         </div>
                     </div>
@@ -95,7 +97,7 @@
                                 <i class="fa fa-user fa-5x" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-9 text-right">
-                                <div class='h2'>3</div>
+                                <div class='h2'><?=$ReportObj->getUserCount()?></div>
                                 <div> کاربرها</div>
                             </div>
                         </div>
@@ -120,7 +122,7 @@
                                 <i class="fa fa-list fa-5x"></i>
                             </div>
                             <div class="col-md-9 text-right">
-                                <div class='h2'>4</div>
+                                <div class='h2'><?=$ReportObj->getCategoryCount()?></div>
                                 <div>دسته ها</div>
                             </div>
                         </div>
@@ -134,8 +136,119 @@
                     </div>
                 </a>
             </div>
+
         </div>
+        <div class="col-md-12" id="container"></div>
     </div>
-      <!-- Sticky Footer -->
-    
+<!--برای چارت درست کردن در پنل ادمین-->
+<script>    var chart = Highcharts.chart('container', {
+
+    chart: {
+    type: 'column'
+    },
+
+    title: {
+    text: 'گزارش کلی سیستم'
+    },
+
+    subtitle: {
+    text: 'اطلاعات کلی سیستم به شرح ذیل می باشد'
+    },
+
+    legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical'
+    },
+
+    xAxis: {
+    categories: [],
+    labels: {
+    x:0
+    }
+    },
+
+    yAxis: {
+    allowDecimals: false,
+    title: {
+    text: 'تعداد'
+    }
+    },
+
+    series: [{
+    name: ' پست ها ',
+    data: [<?=$ReportObj->getPostCount()?>]
+    }, {
+        name: '  پست های فعال',
+        data: [<?=$ReportObj->getActivePostCount()?>]
+    }, {
+        name: '  پست های تایید نشده',
+        data: [<?=$ReportObj->getDraftPostCount()?>]
+    }, {
+        name: '  Comments',
+        data: [<?=$ReportObj->getCommentCount()?>]
+    }, {
+        name: '  کامنت تایید شده',
+        data: [<?=$ReportObj->getApproveCommentCount()?>]
+    },{
+        name: ' User',
+        data: [<?=$ReportObj->getUserCount()?>]
+    }, {
+        name: '  کاربران ادمین',
+        data: [<?=$ReportObj->getAdminUserCount()?>]
+    }, {
+        name: '  کاربران معمولی',
+        data: [<?=$ReportObj->getSubscriberUserCount()?>]
+    },{
+        name: ' Categories ',
+        data: [<?=$ReportObj->getCategoryCount()?>]
+    }],
+
+    responsive: {
+    rules: [{
+    condition: {
+    maxWidth: 500
+    },
+    chartOptions: {
+    legend: {
+    align: 'center',
+    verticalAlign: 'bottom',
+    layout: 'horizontal'
+    },
+    yAxis: {
+    labels: {
+    align: 'left',
+    x: 0,
+    y: -5
+    },
+    title: {
+    text: null
+    }
+    },
+    subtitle: {
+    text: null
+    },
+    credits: {
+    enabled: false
+    }
+    }
+    }]
+    }
+    });
+
+    document.getElementById('small').addEventListener('click', function () {
+    chart.setSize(400);
+    });
+
+    document.getElementById('large').addEventListener('click', function () {
+    chart.setSize(600);
+    });
+
+    document.getElementById('auto').addEventListener('click', function () {
+    chart.setSize(null);
+    });
+</script>
+
+    <!-- Sticky Footer -->
+
    <?php include "Incs/Footer.php" ?>

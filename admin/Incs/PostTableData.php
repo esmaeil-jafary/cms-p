@@ -39,7 +39,7 @@ $CatObj=new Category();
 $cat=$CatObj->getCategory($post["Category_id"]);
 echo $cat[0]["name"];
                 ?></td>
-            <td><?=$post["Title"]?></td>
+            <td><a href="../Post.php?Pid=<?=$post["id"]?>"> <?=$post["Title"]?></a></td>
             <td><?=$post["Author"]?></td>
             <td><?=$post["Date"]?></td>
             <!--            برای اینکه خود عکس را نشان دهد-->

@@ -10,11 +10,11 @@ if (isset($_POST["LoginSubmit"])){
 $UserObj=new User();
 //الان بایددر بخش هدر ارتباط این صفحه با هدر را برقرار کنیم
 $User=$UserObj->getUserByUsername($UserName);
-if (count($User)>0 && ($User[0]["UserName"] === $UserName && $User[0]["Password"] === $Password)) {
+if (count($User)>0 && ($User["UserName"] === $UserName && $User["Password"] === $Password)) {
  $_SESSION["UserName"]=$UserName;
- $_SESSION["Rol"]=$User[0]["Rol"];
- $_SESSION["FirstName"]=$User[0]["FirstName"];
- $_SESSION["LastName"]=$User[0]["LastName"];
+ $_SESSION["Rol"]=$User["Rol"];
+ $_SESSION["FirstName"]=$User["FirstName"];
+ $_SESSION["LastName"]=$User["LastName"];
     //1-اگر یوزر و پسورد دقیقا درست بودن هدر کن به صفحه ادمین
     header("Location:admin");
 }
