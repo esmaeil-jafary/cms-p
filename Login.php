@@ -10,7 +10,7 @@ if (isset($_POST["LoginSubmit"])){
 $UserObj=new User();
 //الان بایددر بخش هدر ارتباط این صفحه با هدر را برقرار کنیم
 $User=$UserObj->getUserByUsername($UserName);
-if (count($User)>0 && ($User["UserName"] === $UserName && $User["Password"] === $Password)) {
+if (count($User) > 0 && ($User["UserName"] === $UserName && password_verify($Password,$User["Password"]))) {
  $_SESSION["UserName"]=$UserName;
  $_SESSION["Rol"]=$User["Rol"];
  $_SESSION["FirstName"]=$User["FirstName"];

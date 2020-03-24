@@ -12,7 +12,8 @@ class User extends DB
     {
         $cn = $this->connect();
         $UserName = $cn->quote("$UserName");
-        $Password = $cn->quote("$Password");
+        $Ops=["cost"=>11];
+        $Password = $cn->quote(password_hash($Password,PASSWORD_BCRYPT,$Ops));
         $FirstName = $cn->quote("$FirstName");
         $LastName = $cn->quote("$LastName");
         $Email = $cn->quote("$Email");
@@ -40,7 +41,8 @@ class User extends DB
         $cn = $this->connect();
         $id = $cn->quote($Uid);
         $UserName = $cn->quote($UserName);
-        $Password = $cn->quote($Password);
+        $Ops=["cost"=>11];
+        $Password = $cn->quote(password_hash($Password,PASSWORD_BCRYPT,$Ops));
         $FirstName = $cn->quote($FirstName);
         $LastName = $cn->quote($LastName);
         $Email = $cn->quote($Email);
@@ -57,6 +59,18 @@ class User extends DB
     if (count($all) > 0) {
          return $all[0];
      } else return null;
+
+    }
+//    برای ریجستر و فرم ثبت نام کاربر
+    public function RegisterUser($UserName,$Email,$Password) {
+$cn=$this->connect();
+$UserName=$cn->quote($UserName);
+$Email=$cn->quote($Email);
+$Password=$cn->quote($Password);
+//        برای اینکه تمامی ثبت نام ها پیش فرض کاربر باشد مقدار رول رو سابسکرایبر می گذاریم
+ $query="insert into users (UserName,Password,Email,Rol) values ($UserName,$Password,$Email,'Subscriber')";
+ $cn->query($query);
+
 
     }
 }
