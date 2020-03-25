@@ -134,6 +134,22 @@ public function getAllPostCount(){
         $qcatId=$cn->quote($catid);
         return $cn->query("select * from posts  where Status='Publish' and Category_id=$qcatId limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getAuthorPostCount($Author)
+    {
+        $cn=$this->connect();
+        $Author=$cn->quote($Author);
+        return $this->connect()->query("select count(id) as Cnt from posts where Status='Publish' and Author=$Author")->fetchAll(PDO::FETCH_ASSOC)[0]["Cnt"];
+    }
+
+    public function getAuthorPostByPage($Author, $PageLength, $Page)
+    {
+        $PageLimit=$Page*$PageLength-$PageLength;
+        $cn=$this->connect();
+        $Author=$cn->quote($Author);
+        return $cn->query("select * from posts  where Status='Publish' and Author=$Author limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
 ?>

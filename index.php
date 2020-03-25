@@ -13,19 +13,27 @@ if (isset($_GET["Page"])){
     $Page=$_GET["Page"];
 }
 //اگر شرط ایف را نگذاریم تمام کتگوری ها نمایش میدهد ولی ما میخواهیم فقط کتگوری مورد نظر نمایش داده شو
+$queryString='';
 if (isset($_GET["catid"])){
 //    قبلا گت ال کتگوری گذاشته بودیم که همه را نشان می داد ولی الان شرط می گذاریم
+    $catid=$_GET["catid"];
+    $queryString="catid={$catid}&";
     $PostCount=$postobj->getAllCatsPostCount($_GET["catid"]);
     $PageCount= ceil( $PostCount/$PageLength);
 //    باید بگوییم ای دی خواصی که می فرستیم
 $posts=$postobj->GetCategoryPostByPage($_GET["catid"],$PageLength,$Page);
 }
 elseif (isset($_GET["Author"])){
-    $posts=$postobj->getPostByAuthor($_GET["Author"]);
+    $AuthorName=$_GET["Author"];
+    $queryString="Author={$AuthorName}&";
+    $PostCount=$postobj->getAuthorPostCount($_GET["Author"]);
+    $PageCount= ceil( $PostCount/$PageLength);
+//    $posts=$postobj->getPostByAuthor($_GET["Author"]);
+    $posts=$postobj->getAuthorPostByPage($_GET["Author"],$PageLength,$Page);
 }
 else{
 //    برای صفحه بندی
-
+$queryString='';
 //    تعداد پست هامان را هم با
     $PostCount=$postobj->getAllPostCount();
 //برای اینکه نشان دهیم پیج کانتمان را و همچنین تابع سیل برای ما رند می کند تعداد صفحات را
@@ -93,7 +101,7 @@ $PageCount= ceil( $PostCount/$PageLength);
                         for ($i=1;$i<=$PageCount;$i++){ ?>
 <!--                           به تعداد صفحاتی که داریم لینک درست کنیم-->
 
-                        <li class="page-item <?php if ($i==$Page) echo "active" ?>" ><a href="?Page=<?=$i?>" class="page-link"><?=$i?></a></li>
+                        <li class="page-item <?php if ($i==$Page) echo "active" ?>" ><a href="?<?=$queryString?>Page=<?=$i?>" class="page-link"><?=$i?></a></li>
                        <?php }
                     ?>
                 </ul>

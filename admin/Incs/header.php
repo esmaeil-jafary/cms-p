@@ -7,6 +7,8 @@ include_once "../inc/classes/Post_Cls.php";
 include_once "../inc/classes/Comment_Cls.php";
 include_once "../inc/classes/User_Cls.php";
 include_once "../inc/classes/Report_Cls.php";
+include_once "../inc/classes/OnlineUser_Cls.php";
+
 
 
 //الان چون درصفحه لاگین سیژن را استارت کرده ایم می توانیم اطلعات دیتابیس را با سیژن بفرستیم مثل نام و نام خاوادگی و ..
