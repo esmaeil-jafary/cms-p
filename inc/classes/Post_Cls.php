@@ -2,6 +2,11 @@
 
 class Post extends DB
 {
+//    برای پیج بندی در اخر صفحه وقتی مطالب زیاد است برود و صفحه گذاری بکند
+public function getAllPostCount(){
+//    فقط تعداد کل پست ها را به ما بدهد
+    return $this->connect()->query("select COUNT(id) as Cnt from posts")->fetchAll(PDO::FETCH_ASSOC)[0]["Cnt"];
+}
     public function getAllPost()
     {
         return $this->connect()->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +77,7 @@ class Post extends DB
     {
         $cn=$this->connect();
         $qcatId=$cn->quote($catid);
-        return $this->connect()->query("select * from posts where Category_id=$qcatId")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->connect()->query("select * from posts where Status='Publish' and Category_id=$qcatId")->fetchAll(PDO::FETCH_ASSOC);
     }
     //    برای ایجاد عملیات گروهی دوتا متغیر می دهیم تا استتوس آن را عوض کند
 //از تابع این وقتی استفاده می شود که بخواهیم مثلا خانه یک و چهر و پنج  را بخواهیم
@@ -91,6 +96,43 @@ class Post extends DB
         $JoinedAr=join(",",$ar);
         $query="delete from posts where id in ($JoinedAr)";
         $this->connect()->query($query);
+    }
+    public function getPostByAuthor($Author){
+        $cn = $this->connect();
+        $Author=$cn->quote("$Author");
+        return $cn->query("select*from posts where Status='Publish' and Author=$Author")->fetchAll(PDO::FETCH_ASSOC);
+    }
+//برای شماره انداز بازدید پست
+    public function IncrimentView($Pid)
+    {
+        $cn=$this->connect();
+        $Pid=$cn->quote($Pid);
+        $query="update posts set View_Count=View_Count+1 where id=$Pid";
+        $cn->query($query);
+    }
+
+    public function getAllPostByPage($PageLength, $Page)
+    {
+//        الان باید بگوییم اگر پیج ما 1 بود از 1تا 5 را نشان بده و اگر 2 بود از 5تا 10 و ..
+//        الان اگر صفحه مثلا 2 بود 2ضربدر طول که 5 تا گذاشتیم می شود و 10 منهای یک5 میشود و 5 تا 10 را نشان میدهد
+
+        $PageLimit=$Page*$PageLength-$PageLength;
+        return $this->connect()->query("select * from posts limit $PageLimit,$PageLength")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllCatsPostCount($catid)
+    {
+        $cn=$this->connect();
+        $qcatId=$cn->quote($catid);
+        return $this->connect()->query("select count(id) as Cnt from posts where Status='Publish' and Category_id=$qcatId")->fetchAll(PDO::FETCH_ASSOC)[0]["Cnt"];
+    }
+
+    public function GetCategoryPostByPage($catid, $PageLength, $Page)
+    {
+        $PageLimit=$Page*$PageLength-$PageLength;
+        $cn=$this->connect();
+        $qcatId=$cn->quote($catid);
+        return $cn->query("select * from posts  where Status='Publish' and Category_id=$qcatId limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

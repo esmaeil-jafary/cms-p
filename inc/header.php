@@ -1,4 +1,6 @@
 <?php
+//برای اینکه ما در صفحاتی بکه از سیشن استفاده می کنیم ابتدا باید سیشن را استارت کنیم  آن را در هدر خود استارت می کنیم تا در همه جا اعمال گرد
+session_start();
 include_once "inc/classes/db.php" ;
 include_once "inc/classes/Categorys_cls.php" ;
 

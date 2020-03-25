@@ -12,11 +12,16 @@
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ">
       <li class="naw-item">
-		 
 		 <a class="nav-link " href="../" >
           صفحه اصلی
         </a>
-		</li>
+      </li>
+<!--        برای اینکه در پنل ادمین بالا سمت راست نام و مشخصات را نمایش درهد جایی که دکمه خروج قرار دارد-->
+        <li class="naw-item">
+            <a class="nav-link " href="Profile.php" >
+                <?=$_SESSION["FirstName"]."".$_SESSION["LastName"]?>
+            </a>
+        </li>
       
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

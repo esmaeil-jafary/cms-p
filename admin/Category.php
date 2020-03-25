@@ -143,7 +143,7 @@ else{
                     echo ' <td> ' . $category["id"] . ' </td> ';
                     echo ' <td> ' . $category["name"] . ' </td> ';
                     echo ' <td> ' . $category["Description"] . ' </td> ';
-                    echo '<td>' . '<a href="?delete=' . $category["id"] . ' " class="btn btn-danger">حذف</a>' . '</td>';
+                    echo '<td>' . '<a onclick="return confirmMessage()" href="?delete=' . $category["id"] . ' " class="btn btn-danger">حذف</a>' . '</td>';
                     echo '<td>' . '<a href="?Edit=' . $category["id"] . ' " class="btn btn-warning">ویرایش</a>' . '</td>';
                     "</tr>";
                 }

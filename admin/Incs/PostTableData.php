@@ -69,6 +69,7 @@ if (isset($_POST['bulkSubmit'])){
         <th>تگ ها</th>
         <th>شمارش محتوا </th>
         <th>status</th>
+        <th>تعداد بازدید پست</th>
         <th>ویرایش</th>
         <th>حذف</th>
     </tr>
@@ -95,9 +96,14 @@ echo $cat[0]["name"];
             <td><?=$post["Tage"]?></td>
             <td><?=$post["Comment_Count"]?></td>
             <td><?=$post["Status"]?></td>
+<!--            برای اینکه تعداد بازدید پست ها مشخص شود-->
+            <td><?=$post["View_Count"]?></td>
+
 <!--            برای اینکه برود به صفحه ادیت پست به شکل زیر می نویسیم.دیلیت چون در این صفحه است نیازی نیست به این شکل بنویسیم-->
             <td><a href="?Type=EditPost&Pid=<?=$post["id"]?>" class="btn btn-primary">ویرایش</a></td>
-            <td><a href="?Delete=<?=$post["id"]?>" class="btn btn-danger">حذفف</a></td>
+<!--            cnfrimMessage یک تابع است که ما هنوز تعریف نکرده ایم و برای پیغام مطمئن هستید می خواهید پاک کنید می باشو و باید برویم در دیتا تیبیل جی اس و تعریفش کنیم -->
+<!--            ان کلیک آن به ما یه ترو و یا فالس برمی گرداند -->
+            <td><a onclick="return confirmMessage()" href="?Delete=<?=$post["id"]?>" class="btn btn-danger">حذفف</a></td>
         </tr>
     <?php }
     ?>
@@ -108,8 +114,8 @@ echo $cat[0]["name"];
 <!--کد جاوا و جیکوری برای دکمه چک آل و انتخاب همه-->
 
 <script>
-    $(document).ready(function (){
-$('#BulkCheachBoxHeader').click(function (){
+    $(document).ready(function () {
+$('#BulkCheachBoxHeader').click(function () {
 if ( this.checked) {
 $('.post_check').each(function (){
 this.cheacked=true

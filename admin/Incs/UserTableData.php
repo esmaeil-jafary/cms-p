@@ -35,7 +35,8 @@ $Users=$UserObj->getAllUser();
             <td><?=$User["Email"]?></td>
             <td><?=$User["Rol"]?></td>
             <td><a href="?type=EditUser&Uid= <?= $User["id"] ?>" class="btn btn-primary">ویرایش</a></td>
-            <td><a href="?Delete=<?=$User["id"] ?>" class="btn btn-danger">حذفف</a></td>
+<!--            آن کلیک را برای اینکه هنگام پاک کردن پیغام آیا مطمئن هستید می خواهید پاک کنید را نمایش بهد-->
+            <td><a onclick="return confirmMessage()" href="?Delete=<?=$User["id"] ?>" class="btn btn-danger">حذفف</a></td>
         </tr>
     <?php }
     ?>

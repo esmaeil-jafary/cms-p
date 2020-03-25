@@ -57,7 +57,8 @@ header("location:post.php");
     <div class="form-group">
         <label for="Content">محتوا</label>
 <!--        از تکست اریا استفاده می کنیم چون طول ان بیشتر است-->
-        <textarea cols="30" rows="10" class="form-control" name="Content" id="Content"></textarea>
+<!--        برای سی کی ادیتور هی دی را ادیتور می گذاریم-->
+        <textarea cols="30" rows="10" class="form-control" name="Content" id="editor"></textarea>
     </div>
     <div class="form-group">
         <label for="Title">تگ</label>

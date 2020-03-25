@@ -87,7 +87,7 @@ if (isset($_POST["SubmitEditPost"]))
         <label for="Content">محتوا</label>
         <!--        از تکست اریا استفاده می کنیم چون طول ان بیشتر است-->
         <!--        برای تکست اریا برای نمایش از دیتا بیس ولیو نیازی نیست-->
-        <textarea cols="30" rows="10" class="form-control" name="Content" id="Content"><?=$CurrentPost[0]["Content"]?></textarea>
+        <textarea cols="30" rows="10" class="form-control" name="Content" id="editor"><?=$CurrentPost[0]["Content"]?></textarea>
     </div>
     <div class="form-group">
         <label for="Title">تگ</label>

@@ -27,6 +27,11 @@
 
                 <?php
             }
+//            الان میخواهیم حالتی را بگذاریم که وقتی کاربر ادمین ادمین وارد شد بتواند از همان صفحه اصلی پست ها را ادیت کند
+//            اگر سیشن یوز نیم ست شده بود و رول آن هم ادمین بود و صفحه ای که در ان قرار داریم Post.php باشد
+            if (isset($_SESSION['UserName']) && $_SESSION['Rol']=="Admin" && strpos($_SERVER["PHP_SELF"],"Post.php")>0){
+                echo '<li class="nav-item"><a class="nav-link" href="admin/Post.php?Type=EditPost&Pid='.$_GET["Pid"].'"> EditPost  </a></li>';
+            }
             ?>
 			<li class="nav-item ">
 				<a class="nav-link" href="admin">Admin</a>

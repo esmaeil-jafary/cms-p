@@ -78,7 +78,7 @@ $Comments=$commentobj->getAllComment();
                 }
                 ?>
             </td>
-            <td><a href="?Delete=<?=$Comment["id"]?>" class="btn btn-danger">حذفف</a></td>
+            <td><a onclick="return confirmMessage()" href="?Delete=<?=$Comment["id"]?>" class="btn btn-danger">حذفف</a></td>
         </tr>
     <?php }
     ?>

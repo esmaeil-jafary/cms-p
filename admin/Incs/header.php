@@ -46,3 +46,5 @@ if (!isset($_SESSION["Rol"]) || $_SESSION["Rol"] !="Admin"){
 <body id="page-top">
 <script src="/cms-p/vendor/jquery/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<!--برای سی کی ادیتور می باشد که برای محتوا ادیتور اضافه می کند-->
+<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>

@@ -39,7 +39,8 @@ if (isset($_POST["SubmitEditUser"])) {
                     </div>
                     <div class="form-group">
                         <label for="Password">پسورد:</label>
-                        <input type="password" class="form-control" name="Password"  value="<?=$User["Password"]?>" id="Password">
+<!--                        چون هنگام آپدیت کردن از پروفایل پسورد مجدد ذخیره نمیشد باید آن را دوباره دستی وارد کنیم تا زمان هشت شدن بهم نریزد و بتوان لاگین کرد-->
+                        <input type="password" class="form-control" name="Password"  id="Password" required>
                     </div>
                     <div class="form-group">
                         <label for="FirstName">نام:</label>

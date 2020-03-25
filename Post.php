@@ -8,6 +8,8 @@ include_once "inc/classes/Comment_cls.php";
 if (isset($_GET["Pid"])) {
     $postobj = new Post();
     $post = $postobj->GetPost($_GET["Pid"]) [0];
+//    برای اینکه هر پستی که خوانده می شود یکی به شمارنده پست اضافه کند
+$postobj->IncrimentView($_GET["Pid"]);
 }
 //برای ثبت کامنت
 $CommentObj=new Comment();
@@ -60,7 +62,7 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
                         </div>
                         <div class="input-group">
                             <label for="Content">محتوا</label>
-                            <textarea name="Content" class="form-group" required></textarea>
+                            <textarea name="Content"  class="form-group"></textarea>
                             <span class="btn-group">
                       
                       <span class="fa fa-search "></span>
