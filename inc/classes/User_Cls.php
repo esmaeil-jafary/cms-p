@@ -73,4 +73,17 @@ $Password=$cn->quote($Password);
 
 
     }
+
+//    برای اینکه ادمین ورودی را چک کنیم و سطح دسترسی بدهیم
+public function IsAdmin($UserName){
+          $cn=$this->connect();
+          $UserName=$cn->quote($UserName);
+//          در ابتدا باید رول آن را در نظر بگیریم
+$query="Select Rol from users where UserName=$UserName";
+$result=$cn->query($query)->fetchAll(PDO::FETCH_ASSOC);
+//یوزرنیم یونیک است و می گوییم اگر همچین یوزری وجود داشت
+if (count($result)>0){
+    return $result[0]["Rol"]=="Admin";
+}else return false;
+    }
 }

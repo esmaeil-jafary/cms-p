@@ -11,6 +11,14 @@
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ">
+        <li class="naw-item">
+            <a class="nav-link " href="#" >
+                <?php
+                $OnlineUserObj=new OnlineUser();
+                echo"کاربران آنلاین: " .$OnlineUserObj->getOnlineUser();
+                ?>
+            </a>
+        </li>
       <li class="naw-item">
 		 <a class="nav-link " href="../" >
           صفحه اصلی

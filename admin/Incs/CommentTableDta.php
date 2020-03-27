@@ -1,7 +1,8 @@
 <!--برای کامنت ها از پست تیبل دیتا را کلا کپی می کنیم و می آوریم در این صفحه برای کامنت ها-->
 <?php
 $commentobj=new Comment();
-if (isset($_GET["Delete"])){
+$UserObj=new User();
+if (isset($_GET["Delete"]) && $UserObj->IsAdmin($_SESSION["UserName"])) {
     $id=$_GET["Delete"];
 //    الان بابد برویم در پست سی ال اس فانکشنش را بنویسیم
     $commentobj->DeleteComment($id);

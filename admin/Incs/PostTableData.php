@@ -1,7 +1,9 @@
 
 <?php
 $Postobj=new Post();
-if (isset($_GET["Delete"])){
+$UserObj=new User();
+//برای جاوگیری از حک کردن و پاک کردن مطالب توسط هکر ها
+if (isset($_GET["Delete"]) && $UserObj->IsAdmin($_SESSION["UserName"])) {
     $id=$_GET["Delete"];
 //    الان بابد برویم در پست سی ال اس فانکشنش را بنویسیم
     $Postobj->DeletePost($id);

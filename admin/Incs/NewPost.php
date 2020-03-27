@@ -2,7 +2,7 @@
 if (isset($_POST["SubmitNewPost"])){
     $Category_id= $_POST["Category_id"];
     $Title= $_POST["Title"];
-    $Author= $_POST["Author"];
+//    $Author= $_POST["Author"];
 //   برای عکس هم نام عکس و فایل عکس
     $ImageName= $_FILES["Image"]["name"];
     $ImageTemp= $_FILES["Image"]["tmp_name"];
@@ -15,7 +15,7 @@ if (isset($_POST["SubmitNewPost"])){
 //   الان باید بگوییم پست ما را ذخیره کنید که باید در صفحه پست سی ال اس کوری انرا بنویسیم و ارتباط دهیم با
 //الان می گوییم حالا که عکس را آپلود کردی بیا یک شی از پست بساز
     $Postobj=new Post();
-    $Postobj->AddPost($Category_id,$Title,$Author,$ImageName,$Content,$Tage,$Status);
+    $Postobj->AddPost($Category_id,$Title,$_SESSION["id"],$ImageName,$Content,$Tage,$Status);
     $PageName=$_SERVER["PHP_SELF"];
 header("location:post.php");
 }
@@ -41,10 +41,10 @@ header("location:post.php");
        </select>
     </div>
 
-    <div class="form-group">
-        <label for="Author">نویسنده:</label>
-        <input type="text" class="form-control" name="Author" id="Author">
-    </div>
+<!--    <div class="form-group">-->
+<!--        <label for="Author">نویسنده:</label>-->
+<!--        <input type="text" class="form-control" name="Author" id="Author">-->
+<!--    </div>-->
 <!--    <div class="form-group">-->
 <!--        <label for="Date">زمان:</label>-->
 <!--        <input type="text" class="form-control" name="Date" id="Date">-->

@@ -15,9 +15,9 @@ if (isset($_POST["SubmitEditPost"]))
 //    زمانی که ما عکس را تغییر نمی خواهیم بدهیم همان قبلی را حفط کن
     if (!empty($_FILES["Image"]["name"])){
         move_uploaded_file($_FILES["Image"]["tmp_name"],"../images/{$_FILES["Image"]["name"] }" );
-        $PostObj->UpdatePost($_POST["id"],$_POST["Title"],$_POST["Category_id"], $_POST["Author"] ,$_FILES["Image"]["name"], $_POST["Content"],$_POST["Tage"],$_POST["Status"]);
+        $PostObj->UpdatePost($_POST["id"],$_POST["Title"],$_POST["Category_id"],$_FILES["Image"]["name"], $_POST["Content"],$_POST["Tage"],$_POST["Status"]);
     }else{
-        $PostObj->UpdatePost($_POST["id"],$_POST["Title"],$_POST["Category_id"], $_POST["Author"] ,$_POST["LastImage"], $_POST["Content"],$_POST["Tage"],$_POST["Status"]);
+        $PostObj->UpdatePost($_POST["id"],$_POST["Title"],$_POST["Category_id"],$_POST["LastImage"], $_POST["Content"],$_POST["Tage"],$_POST["Status"]);
     }
 //خطا می دهد نمیدانم چرا
 ////
@@ -54,12 +54,12 @@ if (isset($_POST["SubmitEditPost"]))
             ?>
         </select>
     </div>
-
-    <div class="form-group">
-        <!--        با استفاده از کارنت پست میتوانیم از دیتا بیس نمایش دهیم با ولیو-->
-        <label for="Author">نویسنده:</label>
-        <input type="text" class="form-control" name="Author" id="Author" value=" <?=$CurrentPost[0]["Author"]?>">
-    </div>
+<!--چون نویسنده را با ورد ادمین خودش اضافه می کند-->
+<!--    <div class="form-group">-->
+<!--        <!--        با استفاده از کارنت پست میتوانیم از دیتا بیس نمایش دهیم با ولیو-->-->
+<!--        <label for="Author">نویسنده:</label>-->
+<!--        <input type="text" class="form-control" name="Author" id="Author" value=" --><?//=$CurrentPost[0]["Author"]?><!--">-->
+<!--    </div>-->
     <div class="form-group">
         <label for="Title">استتوس</label>
         <select name="Status" id="Status" class="form-control" required>

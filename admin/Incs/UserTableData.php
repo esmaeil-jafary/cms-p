@@ -1,6 +1,6 @@
 <?php
 $UserObj=new User();
-if (isset($_GET["Delete"])){
+if (isset($_GET["Delete"]) && $UserObj->IsAdmin($_SESSION["UserName"]) ) {
     $id=$_GET["Delete"];
     $UserObj->DeleteUser($id);
     $PageName=$_SERVER["PHP_SELF"];

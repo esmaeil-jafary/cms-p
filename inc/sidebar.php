@@ -1,4 +1,9 @@
 <div class="col-md-4">
+<!--    الان می خواهیم بگوییم وقتی لاگین کرده بودیم دیگر قسمت ورود و ثبت نام را نشان نده-->
+<!--    میگوییم اگر یوزر ورود نکرده بود لاگین را نمایش بده-->
+    <?php
+    if (!isset($_SESSION["UserName"])){ ?>
+
     <div class="card bg-light mb-4">
 
         <div class="card-header">
@@ -23,7 +28,8 @@
         </div>
         <!-- /.input-group -->
     </div>
-
+       <?php }
+        ?>
     <!-- Blog Search Well -->
     <div class="card bg-light">
         <div class="card-header">

@@ -3,14 +3,17 @@
 <?php
 $catobj=new Category();
 $categories=$catobj->getallCategories();
-if(isset($_GET["delete"]))
+$UserObj=new User();
+if(isset($_GET["delete"]) && $UserObj->IsAdmin($_SESSION["UserName"])  )
 {
     $deleteId=$_GET["delete"];
     $catobj->deleteCategory($deleteId);
     $pageName=$_SERVER["PHP_SELF"];
     header("Location:$pageName");
 }
+$Error= '';
 if(isset($_POST["addCategorySubmit"]))
+
 {
     $name= $_POST["name"];
     $descrip= $_POST["description"];
@@ -18,10 +21,16 @@ if(isset($_POST["addCategorySubmit"]))
     {
         $error="نام را وارد نمایی";
     }
+//    ما نام دسته بندی ها را یونیک قرار دادیم و وقتی نام تکراری وارد کنیم مای اسکیو ال پیغام خطا می دهد که ما قبل از آن باید اجازه ندهیم کار به پیغام خطا برسد و اجازه ندهد
     else {
-        $catobj->addcategory($name,$descrip);
-        $pageName=$_SERVER["PHP_SELF"];
-        header("Location:$pageName");
+        try {
+            $catobj->addcategory($name, $descrip);
+        }
+        catch (Exception $e){
+            $Error= "نام دسته بندی قبلا موجود می باشد لطفا نام دیگری وارد نمایید!!";
+        }
+//        $pageName=$_SERVER["PHP_SELF"];
+//        header("Location:$pageName");
     }
 }
 //نمایش فیلد ذخیره شده از قبل برای اینکه کاربر آن را ببیند و ورایش کند
@@ -67,7 +76,7 @@ else{
     <div class="container-fluid">
     <!--نمایش خطای ولیدیشن کردن فرم-->
     <?php if (isset($error)) {
-        echo "<span class='alert alert-danger' >$error</span>";
+        echo "<span class='alert alert-danger' >$Error</span>";
 //  برای زمانی که ارورداد دیگر ست نشود//
         unset($error);
     } ?>
@@ -78,6 +87,7 @@ else{
         </li>
         <li class="breadcrumb-item active">دسته بندی ها</li>
     </ol>
+    <span class="alert-danger"><?=$Error ?></span>
     <!--  در بوت استرپ کال ام دی شش و پنج و.. به معنای نیمی از صفحه می باشد وکلاس رو بخش کلی است-->
     <div class="row">
         <div class="col-md-5">

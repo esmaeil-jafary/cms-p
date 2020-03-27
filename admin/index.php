@@ -2,6 +2,8 @@
 <?php include "Incs/Navigation.php" ?>
 <?php
 $ReportObj=new Report();
+
+
 ?>
 
 

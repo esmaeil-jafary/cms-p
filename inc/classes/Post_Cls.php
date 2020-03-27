@@ -2,6 +2,11 @@
 
 class Post extends DB
 {
+//    برای نشان دادن نام نویسنده ادمین پست
+private $query="select p.id,Category_id,Title,concat(u.FirstName,' ',u.LastName)
+as Author,Date,p.Image,Content,Tage,Status,View_Count,(select COUNT(id)
+from comments where comments.Post_id=p.id) as Comment_Count from posts as p
+INNER JOIN users as u on u.id=p.author_id";
 //    برای پیج بندی در اخر صفحه وقتی مطالب زیاد است برود و صفحه گذاری بکند
 public function getAllPostCount(){
 //    فقط تعداد کل پست ها را به ما بدهد
@@ -9,7 +14,8 @@ public function getAllPostCount(){
 }
     public function getAllPost()
     {
-        return $this->connect()->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+
+        return $this->connect()->query($this->query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function SearchPost($SearchQuery)
@@ -35,7 +41,7 @@ public function getAllPostCount(){
         $qContent = $cn->quote($Content);
         $qTage = $cn->quote($Tage);
         $qStatus = $cn->quote($Status);
-        $query = "insert into posts (Category_id , Title , Author , Date , Image , Content , Tage , Comment_Count , Status ) values ( $qCategory_id ,$qTitle,$qAuthor, now() ,$qImage,$qContent,$qTage, 0 ,$qStatus)";
+        $query = "insert into posts (Category_id , Title , Author_id , Date , Image , Content , Tage , Comment_Count , Status ) values ( $qCategory_id ,$qTitle,$qAuthor, now() ,$qImage,$qContent,$qTage, 0 ,$qStatus)";
         $cn->query($query);
     }
 
@@ -50,26 +56,28 @@ public function getAllPostCount(){
 //برای ادیت کردن پست ها
     public function GetPost($id)
     {
+
         $cn = $this->connect();
-        $query = "select*from posts where id={$cn->quote($id)}";
+        $query = "$this->query where p.id={$cn->quote($id)}";
         return $cn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 //معنی این کوری این است که یک ایدی میفرستیم براش و کوت میکند بعد کوءری را اجرا میکند
 
     }
 
 //برای ذخیره کردن آپدیت و ویرایش
-    public function UpdatePost($id, $Title, $Category_id,  $Author, $Image, $Content, $Tage, $Status)
+    public function UpdatePost($id, $Title, $Category_id, $Image, $Content, $Tage, $Status)
     {
         $cn = $this->connect();
         $qId = $cn->quote($id);
         $qTitle = $cn->quote($Title);
         $qCategory_id = $cn->quote($Category_id);
-        $qAuthor = $cn->quote($Author);
+//        چون نویسده پست را از نام ادمین می خواند کامنت میکنیم
+//        $qAuthor = $cn->quote($Author);
         $qImage = $cn->quote($Image);
         $qContent = $cn->quote($Content);
         $qTage = $cn->quote($Tage);
         $qStatus = $cn->quote($Status);
-        $query = "update posts set Title=$qTitle , Category_id=$qCategory_id ,  Author=$qAuthor ,  Image=$qImage , Content=$qContent , Tage=$qTage , Status=$qStatus where id=$qId ";
+        $query = "update posts set Title=$qTitle , Category_id=$qCategory_id , Image=$qImage , Content=$qContent , Tage=$qTage , Status=$qStatus where id=$qId ";
         $cn->query($query);
     }
 
@@ -117,7 +125,7 @@ public function getAllPostCount(){
 //        الان اگر صفحه مثلا 2 بود 2ضربدر طول که 5 تا گذاشتیم می شود و 10 منهای یک5 میشود و 5 تا 10 را نشان میدهد
 
         $PageLimit=$Page*$PageLength-$PageLength;
-        return $this->connect()->query("select * from posts limit $PageLimit,$PageLength")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->connect()->query("$this->query limit $PageLimit,$PageLength")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAllCatsPostCount($catid)
@@ -129,10 +137,11 @@ public function getAllPostCount(){
 
     public function GetCategoryPostByPage($catid, $PageLength, $Page)
     {
+
         $PageLimit=$Page*$PageLength-$PageLength;
         $cn=$this->connect();
         $qcatId=$cn->quote($catid);
-        return $cn->query("select * from posts  where Status='Publish' and Category_id=$qcatId limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
+        return $cn->query("$this->query where Status='Publish' and Category_id=$qcatId limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAuthorPostCount($Author)
@@ -147,7 +156,7 @@ public function getAllPostCount(){
         $PageLimit=$Page*$PageLength-$PageLength;
         $cn=$this->connect();
         $Author=$cn->quote($Author);
-        return $cn->query("select * from posts  where Status='Publish' and Author=$Author limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
+        return $cn->query("$this->query  where Status='Publish' and concat(u.FirstName,' ',u.LastName)=$Author limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

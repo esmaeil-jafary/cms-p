@@ -56,14 +56,15 @@ $PageCount= ceil( $PostCount/$PageLength);
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="page-header">
-                Page Heading
-                <small>Secondary Text</small>
-            </h1>
+
 
             <!-- First Blog Post -->
            
-			<?php 
+			<?php
+//            برای اینکه زمانیکه در دسته بندی پستی وجود نداشت بنویسد پستی وجود ندارد
+            if (count($posts)<1){
+                echo "<h2>هیچ پستی وجود ندارد</h2>";
+            }
 //	برای اینکه فقط پستهایی که پابلیش شده اند را نمایش دهد ددر صفحه اصلی
 				foreach($posts as $post) {
 				    if ($post["Status"] != "Publish") {

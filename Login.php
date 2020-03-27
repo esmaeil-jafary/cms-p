@@ -15,6 +15,7 @@ if (count($User) > 0 && ($User["UserName"] === $UserName && password_verify($Pas
  $_SESSION["Rol"]=$User["Rol"];
  $_SESSION["FirstName"]=$User["FirstName"];
  $_SESSION["LastName"]=$User["LastName"];
+ $_SESSION["id"]=$User["id"];
     //1-اگر یوزر و پسورد دقیقا درست بودن هدر کن به صفحه ادمین
     header("Location:admin");
 }
