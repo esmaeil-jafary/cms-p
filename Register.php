@@ -22,9 +22,21 @@ $UserObj=new User();
 //حالا باید پسورد را بصورت هشت شده بکار ببریم
 $Ops=["Cost"=>11];
 $Hash= password_hash($Password,PASSWORD_BCRYPT,$Ops);
-    $UserObj->RegisterUser($Username,$Email,$Hash);
+//برای اینکه چک کنیم تا یوزر و ایمیل تکراری وارد نکنیم
+$ExistUser=$UserObj->getUserByUsername($Username);
+if ($ExistUser){
+    $ErrorMsg=" نام کاربری از قبل موجود است! نام دیگری انتخاب کنید";
+}else{
+//    حالا برای ایمیل تکراری می نویسیم
+    try {
+        $UserObj->RegisterUser($Username,$Email,$Hash);
+    }catch (Exception $e){
+        $ErrorMsg="ثبت نام انجام نشد ایمیل قبلا ثبت شده است";
+    }
+   }
+if (!$ErrorMsg){
     header("location: index.php");
-
+}
 }
 
 ?>

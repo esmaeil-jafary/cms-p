@@ -40,7 +40,7 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
             </p>
             <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?= $post["Date"] ?></p>
             <hr>
-            <img class="img-fluid" src="images/<?= $post["Image"] ?>" alt="">
+            <img class="img-fluid" src="/cms-p/images/<?= $post["Image"] ?>" alt="">
             <hr>
             <p><?= $post["Content"] ?></p>
             <hr>

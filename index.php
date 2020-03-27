@@ -76,20 +76,21 @@ $PageCount= ceil( $PostCount/$PageLength);
 			 
 		 <h2>
 <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                <a href="Post.php?Pid=<?=$post["id"]?>"><?=$post["Title"]?></a>
+                <a href="/cms-p/Post/<?=$post["id"]?>"><?=$post["Title"]?></a>
             </h2>
 			
 			 <p class="lead">
+<!--                 برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
                 نویسنده: <a href="?Author=<?=$post["Author"]?>"><?=$post["Author"]?></a>
             </p>
 			 <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?=$post["Date"]?></p>
 			 <hr>
-            <img class="img-fluid" src="images/<?=$post["Image"]?>" alt="">
+            <img class="img-fluid" src="/cms-p/images/<?=$post["Image"]?>" alt="">
             <hr>
 <!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
 			<p><?=substr($post["Content"],0,70)?></p>
 <!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
-            <a class="btn btn-primary" href="Post.php?Pid=<?=$post["id"]?>">Read More <span class="fa fa-angle-right"></span></a>
+            <a class="btn btn-primary" href="/cms-p/Post/<?=$post["id"]?>">توضیحات بیشتر.. <span class="fa fa-angle-right"></span></a>
 
             <hr>
 			
@@ -102,7 +103,7 @@ $PageCount= ceil( $PostCount/$PageLength);
                         for ($i=1;$i<=$PageCount;$i++){ ?>
 <!--                           به تعداد صفحاتی که داریم لینک درست کنیم-->
 
-                        <li class="page-item <?php if ($i==$Page) echo "active" ?>" ><a href="?<?=$queryString?>Page=<?=$i?>" class="page-link"><?=$i?></a></li>
+                        <li class="page-item <?php if ($i==$Page) echo "active" ?>" ><a href="?Page=<?=$i?>" class="page-link"><?=$i?></a></li>
                        <?php }
                     ?>
                 </ul>

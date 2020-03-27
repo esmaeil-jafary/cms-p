@@ -1,11 +1,20 @@
 <?php
+$UserError='';
 if (isset($_POST["SubmitNewUser"])){
     $UserObj=new User();
-    $UserObj->AddUser($_POST["UserName"],$_POST["Password"],$_POST["FirstName"],$_POST["LastName"],$_POST["Email"],$_POST["Rol"]);
+
+    try {
+        $UserObj->AddUser($_POST["UserName"],$_POST["Password"],$_POST["FirstName"],$_POST["LastName"],$_POST["Email"],$_POST["Rol"]);
+    } catch (Exception $e){
+        $UserError="نام کاربری یا ایمیل از قبل موجود می باشد! لطفا نام یا ایمیل دیگری را وارد نمایید!";
+    }
+if (!$UserError){
     $PageName= $_SERVER["PHP_SELF"];
     header("location: $PageName ");
 }
+}
 ?>
+<span class="alert-danger"><?=$UserError ?></span>
 <form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
         <label for="UserName">نام کاربری:</label>

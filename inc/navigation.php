@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-md-3">
-    <a class="navbar-brand" href="index.php">صفحه اصلی</a>
+    <a class="navbar-brand" href="/cms-p/index">صفحه اصلی</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
                 ?>
 <!--                برای اینکه در منو روی هر قسمت که بودیم آن روشن تر نمایش داده شود-->
                 <li class="nav-item  <?php if (isset($_GET["catid"]) && $_GET["catid"]==$c["id"]) echo "active"?> ">
-                    <a class="nav-link" href="?catid=<?=$c["id"]?>"><?=$c["name"]?><a/>
+                    <a class="nav-link" href="/cms-p/index/Category/<?=$c["id"]?>"><?=$c["name"]?><a/>
                 </li>
 
                 <?php

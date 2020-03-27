@@ -1,16 +1,24 @@
 <?php
+$UserError='';
 $UserObj=new User();
 if (isset($_GET["Uid"])){
-    $UserObj=new User();
     $User=$UserObj->getUser($_GET["Uid"]);
 }
 if (isset($_POST["SubmitEditUser"])){
-$UserObj->UpdateUser($_GET["Uid"],$_POST["UserName"],$_POST["Password"],$_POST["FirstName"],$_POST["LastName"],$_POST["Email"],$_POST["Rol"]);
-$pagename=$_SERVER["PHP_SELF"];
-header("Location: $pagename ");
+    try {
+        $UserObj->UpdateUser($_GET["Uid"],$_POST["UserName"],$_POST["Password"],$_POST["FirstName"],$_POST["LastName"],$_POST["Email"],$_POST["Rol"]);
+    }catch (Exception $e){
+        $UserError="ویرایش انجام نشد!نام کاربری یا ایمیل از قبل موجود می باشد! لطفا نام یا ایمیل دیگری را وارد نمایید!";
+    }
+if (!$UserError){
+    $pagename=$_SERVER["PHP_SELF"];
+    header("Location: $pagename ");
+
+}
 
 }
 ?>
+<span class="alert-danger"><?=$UserError ?></span>
 <form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
         <label for="UserName">نام کاربری:</label>

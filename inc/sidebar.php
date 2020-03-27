@@ -12,7 +12,7 @@
                 <h4>ثبت نام/ورود</h4>
             </div>
             <div class="col-md-6">
-            <a href="Register.php" class="btn btn-secondary">ثبت نام</a>
+            <a href="Register" class="btn btn-secondary">ثبت نام</a>
             </div>
         </div>
         <div class="card-body">
@@ -70,7 +70,7 @@
 		<?php				
       for($i=0;$i<=$cnt/2;$i++){ ?>
 <!--          الان برای اینکه وقتی در دسته بندی ها را در سایدبار کلیک می کنیم برود بر بروی آن دسته لینک تگ ا را قرا می دیهی-->
-       <li><a href="index.php?catid=<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
+       <li><a href="/cms-p/index/Category/<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
       <?php } ?>
              </ul>
                 </div>
@@ -80,7 +80,7 @@
                         <?php
                         for ($i = $cnt/2 + 1 ; $i < $cnt ; $i++) {
 //                            ی دسته بندی دوم هم مانند بالا انجام
-                            $href="index.php?catid={$cats[$i]["id"] } " ;
+                            $href="/cms-p/index/Category/{$cats[$i]["id"] } " ;
                       echo ' <li><a href="'.$href.'"> ' . $cats[$i]["name"]. '</a> </li>';
                       }
                         ?>

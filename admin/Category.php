@@ -11,7 +11,7 @@ if(isset($_GET["delete"]) && $UserObj->IsAdmin($_SESSION["UserName"])  )
     $pageName=$_SERVER["PHP_SELF"];
     header("Location:$pageName");
 }
-$Error= '';
+$CatError= '';
 if(isset($_POST["addCategorySubmit"]))
 
 {
@@ -27,10 +27,14 @@ if(isset($_POST["addCategorySubmit"]))
             $catobj->addcategory($name, $descrip);
         }
         catch (Exception $e){
-            $Error= "نام دسته بندی قبلا موجود می باشد لطفا نام دیگری وارد نمایید!!";
+            $CatError= "نام دسته بندی قبلا موجود می باشد لطفا نام دیگری وارد نمایید!!";
         }
-//        $pageName=$_SERVER["PHP_SELF"];
-//        header("Location:$pageName");
+//        برای رفرش صفحه می گوییم اگر خطای کت ارور وجود نداشت صفحه را رفرش کن وگرنه پیغام خطا را نمایش بده
+        if (!$CatError){
+        $pageName=$_SERVER["PHP_SELF"];
+        header("Location:$pageName");
+        }
+
     }
 }
 //نمایش فیلد ذخیره شده از قبل برای اینکه کاربر آن را ببیند و ورایش کند
@@ -53,13 +57,19 @@ $updateName=$_POST["name"];
 $updateDescription=$_POST["Description"];
 //برای ایکه نام خالی نباشد
 if ($updateName=="" || empty($updateName)) {
-    $error="لطفا نام را جهت ویرایش وارد نمایید";
+    $CatError="لطفا نام را جهت ویرایش وارد نمایید";
 }
 else{
-    $catobj->updateCategory($updateId,$updateName,$updateDescription);
-    $pageName=$_SERVER["PHP_SELF"];
-    header("Location:$pageName");
-}
+    try {
+        $catobj->updateCategory($updateId,$updateName,$updateDescription);
+    } catch (Exception $e){
+        $CatError= " آبدیت انجام نشد! نام دسته بندی قبلا موجود می باشد لطفا نام دیگری وارد نمایید!!";
+    }
+    if (!$CatError){
+        $pageName=$_SERVER["PHP_SELF"];
+        header("Location:$pageName");
+    }
+   }
 }
 ?>
 
@@ -76,7 +86,7 @@ else{
     <div class="container-fluid">
     <!--نمایش خطای ولیدیشن کردن فرم-->
     <?php if (isset($error)) {
-        echo "<span class='alert alert-danger' >$Error</span>";
+        echo "<span class='alert alert-danger' >$CatError</span>";
 //  برای زمانی که ارورداد دیگر ست نشود//
         unset($error);
     } ?>
@@ -87,7 +97,7 @@ else{
         </li>
         <li class="breadcrumb-item active">دسته بندی ها</li>
     </ol>
-    <span class="alert-danger"><?=$Error ?></span>
+    <span class="alert-danger"><?=$CatError ?></span>
     <!--  در بوت استرپ کال ام دی شش و پنج و.. به معنای نیمی از صفحه می باشد وکلاس رو بخش کلی است-->
     <div class="row">
         <div class="col-md-5">
