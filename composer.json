@@ -1,0 +1,6 @@
+{
+    "name": "jafary/cms-p",
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}

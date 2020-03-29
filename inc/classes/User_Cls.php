@@ -61,6 +61,16 @@ class User extends DB
      } else return null;
 
     }
+    public function getUserByEmail($Email)
+    {
+        $cn = $this->connect();
+        $Email = $cn->quote($Email);
+        $all= $cn->query("select * from users where Email=$Email")->fetchAll(PDO::FETCH_ASSOC);
+        if (count($all) > 0) {
+            return $all[0];
+        } else return null;
+
+    }
 //    برای ریجستر و فرم ثبت نام کاربر
     public function RegisterUser($UserName,$Email,$Password) {
 $cn=$this->connect();
@@ -86,4 +96,14 @@ if (count($result)>0){
     return $result[0]["Rol"]=="Admin";
 }else return false;
     }
+//    برای چک کردن و ورود با ایمیل
+
+//برای اینکه توکن تولید شده را در دیتابیس ذخیره کند
+public function UpdateToken($UserId,$Token){
+    $cn = $this->connect();
+    $UserId = $cn->quote($UserId);
+    $Token = $cn->quote($Token);
+    $cn->query("update users set Token=$Token WHERE id=$UserId");
+
+}
 }
