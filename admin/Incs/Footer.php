@@ -65,6 +65,23 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<!--برای دریافت نوتیفیکیشن-->
+  <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script>
+
+      Pusher.logToConsole = true;
+      var pusher = new Pusher('8912d94d4b1a867fc87d', {
+          cluster: 'ap2',
+          forceTLS: true
+      });
+
+          var channel = pusher.subscribe('my-channel');
+          channel.bind('Register',function (data) {
+            toastr.success(data.message);
+          })
+  </script>
 
 </body>
 

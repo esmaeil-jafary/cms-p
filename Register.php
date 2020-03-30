@@ -4,6 +4,7 @@
 <?php
 include_once "inc/classes/db.php";
 include_once "inc/classes/User_Cls.php";
+include_once "inc/classes/Notification_Cls.php";
 //پیغام خطا برای تکرار مجدد اشتباه پسورد
 $ErrorMsg='';
 if (isset($_POST["Register"])){
@@ -30,6 +31,10 @@ if ($ExistUser){
 //    حالا برای ایمیل تکراری می نویسیم
     try {
         $UserObj->RegisterUser($Username,$Email,$Hash);
+//        برای ارسال ناتیفیکیشن
+        $NotifObj=new Notification();
+        $data=["Message"=>"$Username Just Registered."];
+        $NotifObj->sendNotification($data);
     }catch (Exception $e){
         $ErrorMsg="ثبت نام انجام نشد ایمیل قبلا ثبت شده است";
     }
