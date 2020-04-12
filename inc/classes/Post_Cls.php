@@ -158,7 +158,9 @@ public function getAllPostCount(){
         $Author=$cn->quote($Author);
         return $cn->query("$this->query  where Status='Publish' and concat(u.FirstName,' ',u.LastName)=$Author limit $PageLimit,$PageLength ")->fetchAll(PDO::FETCH_ASSOC);
     }
-
+public function getNewsView(){
+	return $this->connect()->query("select * from News")->fetchAll (PDO::FETCH_ASSOC);
+}
 }
 
 ?>

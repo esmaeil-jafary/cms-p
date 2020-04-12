@@ -54,7 +54,7 @@ if(isset($_POST['SearchSubmit'])){
 				echo 'مقادیر جستجو موجود نمی باشد';
 			}
 			?>
-            <a class="btn btn-primary" href="#">Read More <span class="fa fa-angle-right"></span></a>
+            <a class="btn btn-primary" href="#">اطلاعات بیشتر  <span class="fa fa-angle-right"></span></a>
 
             <hr>
 
@@ -62,10 +62,10 @@ if(isset($_POST['SearchSubmit'])){
             <!-- Pager -->
             <ul class="">
                 <li class="btn  btn-outline-primary">
-                    <a href="#">&larr; Older</a>
+                    <a href="#">&larr; قبلی</a>
                 </li>
                 <li class="btn float-md-right btn-outline-primary">
-                    <a href="#">Newer &rarr;</a>
+                    <a href="#">بعدی &rarr;</a>
                 </li>
             </ul>
         </div>

@@ -10,7 +10,8 @@
 		</div>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="Category.php" ></i>
+		<a class="nav-link" href="Category.php" >
+            <i class="fa fa-home"></i>
 			<span> دسته بندی ها</span> 
 		</a>
 		
@@ -38,5 +39,12 @@
           <span>پروفایل</span>
         </a>
       </li>
+    <li class="nav-item">
+        <a class="nav-link" href="News.php" ></i>
+            <i class="fas fa-fw fa-newspaper"></i>
+            <span> خبرها</span>
+        </a>
+
+    </li>
      
     </ul>
