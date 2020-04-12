@@ -15,10 +15,10 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="/cms-p/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/cms-p/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 
 

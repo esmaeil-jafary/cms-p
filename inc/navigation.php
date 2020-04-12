@@ -1,6 +1,7 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-md-3">
-    <a class="navbar-brand" href="/cms-p/index">صفحه اصلی</a>
+    <a class="navbar-brand" href="/index">صفحه اصلی</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,20 +18,108 @@
                 <a class="nav-link" href="#">Pricing</a>
             </li> -->
             <?php
-            $cat=new Category ();
-            $cats=$cat->getAllCategories();
-            foreach ($cats as $c) {
-                ?>
-<!--                برای اینکه در منو روی هر قسمت که بودیم آن روشن تر نمایش داده شود-->
-                <li class="nav-item  <?php if (isset($_GET["catid"]) && $_GET["catid"]==$c["id"]) echo "active"?> ">
-                    <a class="nav-link" href="/cms-p/index/Category/<?=$c["id"]?>"><?=$c["name"]?><a/>
-                </li>
+$MenuObj = new Menu();
+$Menus = $MenuObj->getMenu();
 
+//برای اینکه سر منو ها را شناسای کنیم
+function getSubMenu($Menus, $MenuId = null)
+{
+    $SubMenus = [];
+    foreach ($Menus as $M) {
+        if ($M["parent_id"] == $MenuId) {
+            $SubMenus[] = $M;
+        }
+    }
+    return $SubMenus;
+}
+function renderMenu($Menus,$SubMenu){
+//دو نوع ساب منو داریم که ممکن است خودش اخرین باشد و دیگر ساب منو نداشته باشد و یا خودش ساب منو دیگر هم داشته باشد
+$SubSubMenu=getSubMenu($Menus,$SubMenu["id"]);
+//کوچکتر از یک یعنی خودش انتهایی بود
+if (count($SubSubMenu )<1){
+    echo " <li class=\"dropdown-item\"><a href='{$SubMenu['url']}'> {$SubMenu['name']}</a></li>";
+}
+//اما اگر خودش ساب منو دارد
+else{
+   echo"<li class=\"dropdown-item dropdown-submenu\">";
+   echo "<a class=\"test\" tabindex=\"-1\" href=\"#\">{$SubMenu['Name']} <span class=\"caret\"></span></a>";
+   echo "<ul class=\"dropdown-menu\">";
+//   حالا باید بگوییم رندر منو کن این ساب منو را
+foreach ($SubSubMenu as $sMenu){
+    renderMenu($Menus,$sMenu);
+}
+echo "</ul>";
+echo "</li>";
+
+}
+}
+?>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta charset="UTF-8">
+                <title>Title</title>
+
+            </head>
+            <body>
+            <div class="container">
+                <!--    برای نمایش منو هنوها ابتدا باید منو های اصلی را پیدا کنیم-->
                 <?php
-            }
-//            الان میخواهیم حالتی را بگذاریم که وقتی کاربر ادمین ادمین وارد شد بتواند از همان صفحه اصلی پست ها را ادیت کند
-//            اگر سیشن یوز نیم ست شده بود و رول آن هم ادمین بود و صفحه ای که در ان قرار داریم Post.php باشد
-//            برای تشخیص ادمین
+                $MasterMenu = getSubMenu($Menus);
+                //الان مستر منو  ها را می گیریم و باید یه حلقه ایجاد کنیم تا
+                //قبلا حلقه را می بستیم اما پی اچ پی یک روش دیگر هم دارد  که بصورت زیر است
+                foreach ($MasterMenu as $men): ?>
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle " type="button" data-toggle="dropdown"><?= $men["name"] ?>
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <!--                برای اینکه منو باد زیر منوهای خود را صدا بزند از تابع بازگشتی استفتده می کنیم -->
+                            <?php
+                            //                        الان می گوئیم ساب منو های این منو را برای ما در بیاور
+                            $SubMenus=getSubMenu($Menus,$men["id"]);
+                            //                    حالا یک حلقه می گذاریم و می گوییم هر یاب منو که در اوردی باید ال ای ان را هم نمایش بدهی
+                            foreach ($SubMenus as $subMenu){
+//                    کل منو ها را به تابع رندر می دهیم و می گوییم ساب منو هایش را هم بیاور
+                                renderMenu($Menus,$subMenu);
+
+                            }
+                            ?>
+                        </ul>
+                    </div>
+
+                <?php endforeach; ?>
+                <!--    برای ایجاد ajax-->
+
+<!--                <div class="form-group mt-5">-->
+<!--                    <input class="form-control" type="text" id="text" placeholder="type Is">-->
+<!--                </div>-->
+                <div id="cn">
+
+                </div>
+
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $('.dropdown-submenu a.test').on("click", function (e) {
+                        $(this).next('ul').toggle();
+                        e.stopPropagation();
+                        e.preventDefault();
+                    });
+                    $('#text').keydown(function (e) {
+                        var value=$('#text').val();
+                        $.ajax({
+                            url:'Ajax.php?q='+value,
+                            method:'get',
+                            success:function (data) {
+                                $('#cn').html(data);
+                            }
+                        });
+                    })
+                });
+            </script>
+
+<?php
 $UserObj=new User();
             if (isset($_SESSION['UserName']) && $UserObj->IsAdmin($_SESSION["UserName"]) && strpos($_SERVER["PHP_SELF"],"Post.php")>0){
                 echo '<li class="nav-item"><a class="nav-link" href="admin/Post.php?Type=EditPost&Pid='.$_GET["Pid"].'"> EditPost  </a></li>';

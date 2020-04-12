@@ -1,5 +1,5 @@
 {
-    "name": "jafary/cms-p",
+    "name": "jafary",
     "require": {
         "phpmailer/phpmailer": "^6.1",
         "pusher/pusher-php-server": "^4.1"

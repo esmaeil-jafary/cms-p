@@ -43,13 +43,14 @@ if (!isset($_SESSION["Rol"]) || !$UserObj->IsAdmin($_SESSION["UserName"])){
   <link href="/cms-p/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="/cms-p/css/sb-admin.css" rel="stylesheet">
+   <link href="/cms-p/css/bootstrap.min.css" rel="stylesheet">
+ <link href="/cms-p/css/sb-admin.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
-<script src="/cms-p/vendor/jquery/jquery.min.js"></script>
+<script src="cms-p/vendor/jquery/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <!--برای سی کی ادیتور می باشد که برای محتوا ادیتور اضافه می کند-->
 <script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>

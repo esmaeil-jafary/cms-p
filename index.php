@@ -76,7 +76,7 @@ $PageCount= ceil( $PostCount/$PageLength);
 			 
 		 <h2>
 <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                <a href="/cms-p/Post/<?=$post["id"]?>"><?=$post["Title"]?></a>
+                <a href="/Post/<?=$post["id"]?>"><?=$post["Title"]?></a>
             </h2>
 			
 			 <p class="lead">
@@ -85,12 +85,12 @@ $PageCount= ceil( $PostCount/$PageLength);
             </p>
 			 <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?=$post["Date"]?></p>
 			 <hr>
-            <img class="img-fluid" src="/cms-p/images/<?=$post["Image"]?>" alt="">
+            <img class="img-fluid" src="/images/<?=$post["Image"]?>" alt="">
             <hr>
 <!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
 			<p><?=substr($post["Content"],0,70)?></p>
 <!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
-            <a class="btn btn-primary" href="/cms-p/Post/<?=$post["id"]?>">توضیحات بیشتر.. <span class="fa fa-angle-right"></span></a>
+            <a class="btn btn-primary" href="/Post/<?=$post["id"]?>">توضیحات بیشتر.. <span class="fa fa-angle-right"></span></a>
 
             <hr>
 			

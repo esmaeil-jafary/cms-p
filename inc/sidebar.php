@@ -38,7 +38,7 @@
             <h4>Blog Search</h4>
         </div>
         <div class="card-body">
-			<form method="post" action="/cms-p/Search.php" >
+			<form method="post" action="/Search.php" >
             <div class="input-group">
                 <input name="SearchQuery" type="text" class="form-control">
                 <span class="btn-group">
@@ -73,7 +73,7 @@
 		<?php				
       for($i=0;$i<=$cnt/2;$i++){ ?>
 <!--          الان برای اینکه وقتی در دسته بندی ها را در سایدبار کلیک می کنیم برود بر بروی آن دسته لینک تگ ا را قرا می دیهی-->
-       <li><a href="/cms-p/index/Category/<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
+       <li><a href="/index/Category/<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
       <?php } ?>
              </ul>
                 </div>
@@ -83,7 +83,7 @@
                         <?php
                         for ($i = $cnt/2 + 1 ; $i < $cnt ; $i++) {
 //                            ی دسته بندی دوم هم مانند بالا انجام
-                            $href="/cms-p/index/Category/{$cats[$i]["id"] } " ;
+                            $href="/index/Category/{$cats[$i]["id"] } " ;
                       echo ' <li><a href="'.$href.'"> ' . $cats[$i]["name"]. '</a> </li>';
                       }
                         ?>

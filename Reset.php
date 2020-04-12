@@ -29,7 +29,7 @@ if (isset($_POST["Reset"])){
 //        حالا باید پسورد هشت شده جدید را بعنوان پسورد جدید ذخیره بکنیم
 
         $UserObj->UpdateUser($User["id"],$User["UserName"],$Password,$User["FirstName"],$User["LastName"],$User["Email"],$User["Rol"]);
-        header("Location: /cms-p/index");
+        header("Location: /index");
     }else{
         $ErrorMsg="توکن امنیتی شما صحیح نمی باشد";
     }
