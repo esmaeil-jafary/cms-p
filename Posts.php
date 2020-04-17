@@ -50,8 +50,13 @@ if (isset($_GET["catid"])) {
     <!--        ساید بار سمت راست-->
    
 <div class="col-md-3">
-	<p class="rounded text-center bg-info w-100 h1">دسته ها</p>
-    <ul class="list-unstyled">
+    <div class="row">
+	<h1 class="rounded text-center bg-info w-100 ml-3 ">دسته ها</h1>
+    </div>
+
+
+    <li class="list-unstyled mr-1">
+
                 <?php
                 include_once "inc/classes/db.php";
                 include_once "inc/classes/Categorys_cls.php";
@@ -59,10 +64,10 @@ if (isset($_GET["catid"])) {
                 $cats = $cat->getAllCategories();
                 foreach ($cats as $c){?>
                     <li>
-                        <img class="rounded text-center w-100" src="/cms-p/images/<?= $c["Image"] ?>"
+                        <img class="rounded ml-auto w-100 " src="/cms-p/images/<?= $c["Image"] ?>"
                              alt="" >
                     </li>
-                    <button class="rounded text-center w-100 mb-5 bg-info">
+                    <button class="rounded-bottom text-center w-100 h6  mb-4 bg-info">
                         <h2>
                             <a href="/cms-p/index/Category/<?= $c["id"] ?>"><?= $c["name"] ?></a>
                         </h2>
@@ -70,20 +75,19 @@ if (isset($_GET["catid"])) {
 
                 <?php }
                 ?>
-    </ul>
+
+    </li>
+
 </div>
+
 
 
        <!--  پست ها-->
     <div class="col-md-6">
-       <div class="row">
-                    <h2>آخرین پست ها</h2>
-                    <p>تمامی پست های ارسالی توسط اعضاء در این قسمت نمایش داده می شود</p>
-
-
-        </div>
-
-        <div class="card-body ">
+<div class="row">
+                    <h1 class="text-center bg-primary rounded w-100">آخرین پست ها در این قسمت می باشد</h1>
+</div>
+        <li class="list-unstyled mr-1">
             <!-- First Blog Post -->
                 <?php
 
@@ -99,13 +103,13 @@ if (isset($_GET["catid"])) {
                     }
                     ?>
 
-                    <ul class="list-unstyled btn-light mb-3 text-center">
 
-                        <img class="text-center rounded mx-auto d-block " src="/cms-p/images/<?= $post["Image"] ?>"
+
+                        <img class="text-center rounded w-100 " src="/cms-p/images/<?= $post["Image"] ?>"
                              alt="" style="width: 540px; height: 250px;" ">
-                        <button class="col-md-10  bg-info rounded">
+                        <button class="w-100 bg-info rounded">
                             <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                        <u><a href="/cms-p/Post/<?= $post["id"] ?>"><?= $post["Title"] ?></a></u>
+                        <h3><u><a href="/cms-p/Post/<?= $post["id"] ?>"><?= $post["Title"] ?></a></u></h3>
                         </button>
                         <p class="btn-light text-center"><?= substr($post["Content"], 0, 70) ?></p>
                         <p class="lead">
@@ -120,9 +124,10 @@ if (isset($_GET["catid"])) {
                                     class="fa fa-angle-right"></span></a>
 
 <!--                        <hr style="margin-bottom: 5px;">-->
-                    </ul>
+
                 <?php }
                 ?>
+
                 <!--         برای اینکه در اخر صفحه متل گوگل برای شماره صفحات پیج کانت لینک بگذاریم -->
                 <nav>
                     <ul class="pagination">
@@ -148,8 +153,8 @@ if (isset($_GET["catid"])) {
                 <!--                    <a href="#">Newer &rarr;</a>-->
                 <!--                </li>-->
                 <!--            </ul>-->
+        </li>
 
-        </div>
 
 
     </div>

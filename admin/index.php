@@ -142,6 +142,7 @@ $ReportObj=new Report();
         </div>
         <div class="col-md-12" id="container"></div>
     </div>
+
 <!--برای چارت درست کردن در پنل ادمین-->
 <script>    var chart = Highcharts.chart('container', {
 

@@ -17,7 +17,7 @@ include_once "inc/classes/User_Cls.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>قالب شرکتی چند منظوره ریسپانسیو - ایکس باینز</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="/cms-p/csbootf/bootstrap.min.css">
+    <link rel="stylesheet" href="/cms-p/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/aos.css">
