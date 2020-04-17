@@ -51,7 +51,7 @@ if (isset($_GET["catid"])) {
    
 <div class="col-md-3">
     <div class="row">
-	<h1 class="rounded text-center bg-info w-100 ml-3 ">دسته ها</h1>
+	<h1 class="card-header rounded text-center bg-info w-100 ml-3 mb-3 ">دسته ها</h1>
     </div>
 
 
@@ -64,14 +64,14 @@ if (isset($_GET["catid"])) {
                 $cats = $cat->getAllCategories();
                 foreach ($cats as $c){?>
                     <li>
-                        <img class="rounded ml-auto w-100 " src="/cms-p/images/<?= $c["Image"] ?>"
+                        <img class="rounded-top ml-auto w-100 " src="/cms-p/images/<?= $c["Image"] ?>"
                              alt="" >
                     </li>
-                    <button class="rounded-bottom text-center w-100 h6  mb-4 bg-info">
-                        <h2>
+
+    <h3 class="text-danger text-center rounded-bottom bg-info w-100">
                             <a href="/cms-p/index/Category/<?= $c["id"] ?>"><?= $c["name"] ?></a>
-                        </h2>
-                    </button>
+                        </h3>
+
 
                 <?php }
                 ?>
@@ -85,7 +85,7 @@ if (isset($_GET["catid"])) {
        <!--  پست ها-->
     <div class="col-md-6">
 <div class="row">
-                    <h1 class="text-center bg-primary rounded w-100">آخرین پست ها در این قسمت می باشد</h1>
+                    <h1 class="card-header text-center bg-primary rounded w-100 mr-3 ml-3 mb-3">آخرین پست ها در این قسمت می باشد</h1>
 </div>
         <li class="list-unstyled mr-1">
             <!-- First Blog Post -->
@@ -105,23 +105,23 @@ if (isset($_GET["catid"])) {
 
 
 
-                        <img class="text-center rounded w-100 " src="/cms-p/images/<?= $post["Image"] ?>"
+                        <img class="text-center rounded-top w-100 " src="/cms-p/images/<?= $post["Image"] ?>"
                              alt="" style="width: 540px; height: 250px;" ">
-                        <button class="w-100 bg-info rounded">
+
                             <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                        <h3><u><a href="/cms-p/Post/<?= $post["id"] ?>"><?= $post["Title"] ?></a></u></h3>
-                        </button>
-                        <p class="btn-light text-center"><?= substr($post["Content"], 0, 70) ?></p>
-                        <p class="lead">
+                        <h3 class="text-danger text-center rounded-bottom bg-info w-100"><u><a class="h1" href="/cms-p/Post/<?= $post["id"] ?>"><?= $post["Title"] ?></a></u></h3>
+
+                        <h3 class="btn-light text-center h3"><?= substr($post["Content"], 0, 70) ?></h3>
+                        <h3 class="lead">
                             <!--                 برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
                             نویسنده: <a href="?Author=<?= $post["Author"] ?>"><?= $post["Author"] ?></a>
-                        </p>
-                        <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?= $post["Date"] ?></p>
+                        </h3>
+                        <h3 class="text-info"><span class="fa fa-clock h3 text-danger "></span><?= $post["Date"] ?></h3>
                         <!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
 
                         <!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
-                        <a class="btn btn-primary " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span
-                                    class="fa fa-angle-right"></span></a>
+                        <a class="btn btn-primary mb-4 " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span
+                                    class="fa fa-angle-left"></span></a>
 
 <!--                        <hr style="margin-bottom: 5px;">-->
 
@@ -174,9 +174,9 @@ if (isset($_GET["catid"])) {
                 foreach ($New as $N) {
                     ?>
                     <ul class="list-unstyled btn-info mt-1">
-                        <li style="color: red;"><h2><u style="color: yellow">موضوع:</u><?= $N["Title"] ?></h2></li>
+                        <h3><i class="fa fa "></i><?= $N["Title"] ?></h3>
                         <li><h3><?= $N["Content"] ?></h3></li>
-                        <p style="color: blue">زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>
+                        <p>زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>
                     </ul>
 
                 <?php }
