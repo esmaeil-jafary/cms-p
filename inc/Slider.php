@@ -1,63 +1,32 @@
+<div class="row">
 
+    <div class="col-md mb-4 ">
 
-
-
-<div class="col-md-4">
-    <!--    الان می خواهیم بگوییم وقتی لاگین کرده بودیم دیگر قسمت ورود و ثبت نام را نشان نده-->
-    <!--    میگوییم اگر یوزر ورود نکرده بود لاگین را نمایش بده-->
-    <?php
-    if (!isset($_SESSION["UserName"])){ ?>
-
-    <div class="card bg-light mb-4">
-
-
-        <?php }
-        ?>
-
-
-        <!-- Blog Categories Well -->
-        <div class="card bg-light mt-4">
-            <div class="card-header">
-                <h4>دسته بندی ها</h4>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <?php
-                    include_once "inc/classes/db.php" ;
-                    include_once "inc/classes/Categorys_cls.php" ;
-                    $cat=new Category ();
-                    $cats=$cat->getAllCategories();
-
-                    $cnt=count($cats);
-                    ?>
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <?php
-                            for($i=0;$i<=$cnt/2;$i++){ ?>
-                                <!--          الان برای اینکه وقتی در دسته بندی ها را در سایدبار کلیک می کنیم برود بر بروی آن دسته لینک تگ ا را قرا می دیهی-->
-                                <li><a href="/index/Category/<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <!-- نمایش گتگوری در دو ستون و اینجا ستون دوم -->
-                            <?php
-                            for ($i = $cnt/2 + 1 ; $i < $cnt ; $i++) {
-//                            ی دسته بندی دوم هم مانند بالا انجام
-                                $href="/index/Category/{$cats[$i]["id"] } " ;
-                                echo ' <li><a href="'.$href.'"> ' . $cats[$i]["name"]. '</a> </li>';
-                            }
-                            ?>
-                        </ul>
+        <div>
+            <section class="slider rounded-top" data-aos="fade-up">
+                <div class="owl-carousel slider-carousel">
+                    <div class="slider-area" style="background-image:url(assets/images/slider_bg_01.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slider-content row height-250 align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="slider-text text-white">
+                                                <h2 class="display-4">کارشناسان برای حل مشکل <span>کسب و کار</span>   و چالش ها و مسائل های شما اینجا هستند.</h2>
+                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                                <a href="#" class="button-one mt-4">بیشتر ببینید</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img class="img-fluid" src="assets/images/slider_01.png" alt="slider" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
+            </section>
         </div>
-
-
-
     </div>
-
+</div>

@@ -1,5 +1,12 @@
+<!--بالای هدر-->
+
+
+
+
+
 <?php include_once "inc/Header.php"?>
 <?php include_once "inc/navigation.php"?>
+<?php include_once "inc/Slider.php"?>
 
 
 
@@ -169,9 +176,9 @@
 <!--</section>-->
 <!-- End Call To Action With Contact -->
 <!-- Start Testimonials -->
-<section class="testimonial-section section-ptb" data-aos="fade-up">
-    <div class="testimonials-area pt-xs-140">
-        <div class="container">
+<!--<section class="testimonial-section section-ptb" data-aos="fade-up">-->
+<!--    <div class="testimonials-area pt-xs-140">-->
+<!--        <div class="container">-->
 <!--            <div class="row">-->
 <!--                <div class="col-md-7 mx-auto">-->
 <!--                    <div class="section-title text-center">-->
@@ -181,7 +188,7 @@
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div class="row testimonials_wrapper mt-5">
+<!--            <div class="row testimonials_wrapper mt-5">-->
 <!--                <div class="col-md-6 my-4">-->
 <!--                    <div class="single-testimonial">-->
 <!--                        <div class="client-info d-flex align-items-center">-->
@@ -207,81 +214,82 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-                <div class="col-md-6 my-3">
-                    <div class="single-testimonial">
-                        <div class="client-info d-flex align-items-center">
-                            <div class="client-thumb pr-4">
-                                <img src="assets/images/client_02.png" alt="client one">
-                            </div>
-                            <div class="client-bio">
-                                <p>جعفر خان</p>
-                                <span>طراح قالب</span>
-                                <div class="ratting-list">
-                                    <ul>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-text py-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 my-3">
-                    <div class="single-testimonial">
-                        <div class="client-info d-flex align-items-center">
-                            <div class="client-thumb pr-4">
-                                <img src="assets/images/client_03.png" alt="client one">
-                            </div>
-                            <div class="client-bio">
-                                <p>مجتبی خان</p>
-                                <span>طراح قالب</span>
-                                <div class="ratting-list">
-                                    <ul>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-text py-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 my-3">
-                    <div class="single-testimonial">
-                        <div class="client-info d-flex align-items-center">
-                            <div class="client-thumb pr-4">
-                                <img src="assets/images/client_04.png" alt="client one">
-                            </div>
-                            <div class="client-bio">
-                                <p>سعید شابو</p>
-                                <span>طراح قالب</span>
-                                <div class="ratting-list">
-                                    <ul>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li class="active"><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="client-text py-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                        </div>
-                    </div>
-                </div>
+
+<!--                <div class="col-md-6 my-3">-->
+<!--                    <div class="single-testimonial">-->
+<!--                        <div class="client-info d-flex align-items-center">-->
+<!--                            <div class="client-thumb pr-4">-->
+<!--                                <img src="assets/images/client_02.png" alt="client one">-->
+<!--                            </div>-->
+<!--                            <div class="client-bio">-->
+<!--                                <p>جعفر خان</p>-->
+<!--                                <span>طراح قالب</span>-->
+<!--                                <div class="ratting-list">-->
+<!--                                    <ul>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="client-text py-4">-->
+<!--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 my-3">-->
+<!--                    <div class="single-testimonial">-->
+<!--                        <div class="client-info d-flex align-items-center">-->
+<!--                            <div class="client-thumb pr-4">-->
+<!--                                <img src="assets/images/client_03.png" alt="client one">-->
+<!--                            </div>-->
+<!--                            <div class="client-bio">-->
+<!--                                <p>مجتبی خان</p>-->
+<!--                                <span>طراح قالب</span>-->
+<!--                                <div class="ratting-list">-->
+<!--                                    <ul>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="client-text py-4">-->
+<!--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 my-3">-->
+<!--                    <div class="single-testimonial">-->
+<!--                        <div class="client-info d-flex align-items-center">-->
+<!--                            <div class="client-thumb pr-4">-->
+<!--                                <img src="assets/images/client_04.png" alt="client one">-->
+<!--                            </div>-->
+<!--                            <div class="client-bio">-->
+<!--                                <p>سعید شابو</p>-->
+<!--                                <span>طراح قالب</span>-->
+<!--                                <div class="ratting-list">-->
+<!--                                    <ul>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li class="active"><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                        <li><i class="fa fa-star"></i></li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="client-text py-4">-->
+<!--                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
@@ -311,103 +319,104 @@
 <!--</section>-->
 <!-- End Call To Action 2 -->
 <!-- Start Full Width Carousel -->
-<section class="carousel-section section-pt" data-aos="fade-up">
-    <div class="full-wifth-carousel-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="owl-carousel services-carousel">
-                    <div class="single-carousel">
-                        <div class="carousel-content">
-                            <img src="assets/images/carousel_01.jpg" alt="carousel">
-                            <div class="carousel-text  bg_semi_white p-2">
-                                <h2><a href="#">ایده کسب و کار برای تست</a></h2>
-                                <p>مشاور</p>
-                            </div>
-                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="single-carousel">
-                        <div class="carousel-content">
-                            <img src="assets/images/carousel_02.jpg" alt="carousel">
-                            <div class="carousel-text  bg_semi_white p-2">
-                                <h2><a href="#">اخطار برای همه</a></h2>
-                                <p>مشاور</p>
-                            </div>
-                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="single-carousel">
-                        <div class="carousel-content">
-                            <img src="assets/images/carousel_03.jpg" alt="carousel">
-                            <div class="carousel-text  bg_semi_white p-2">
-                                <h2><a href="#">گزینه دیگری برای</a></h2>
-                                <p>مشاور</p>
-                            </div>
-                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="single-carousel">
-                        <div class="carousel-content">
-                            <img src="assets/images/carousel_04.jpg" alt="carousel">
-                            <div class="carousel-text  bg_semi_white p-2">
-                                <h2><a href="#">آموزش و پرورش و خدمات</a></h2>
-                                <p>مشاور</p>
-                            </div>
-                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="single-carousel">
-                        <div class="carousel-content">
-                            <img src="assets/images/carousel_05.jpg" alt="carousel">
-                            <div class="carousel-text  bg_semi_white p-2">
-                                <h2><a href="#">خدمات تحویل خانه</a></h2>
-                                <p>مشاور</p>
-                            </div>
-                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section class="carousel-section section-pt" data-aos="fade-up">-->
+<!--    <div class="full-wifth-carousel-area">-->
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="owl-carousel services-carousel">-->
+<!--                    <div class="single-carousel">-->
+<!--                        <div class="carousel-content">-->
+<!--                            <img src="assets/images/carousel_01.jpg" alt="carousel">-->
+<!--                            <div class="carousel-text  bg_semi_white p-2">-->
+<!--                                <h2><a href="#">ایده کسب و کار برای تست</a></h2>-->
+<!--                                <p>مشاور</p>-->
+<!--                            </div>-->
+<!--                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single-carousel">-->
+<!--                        <div class="carousel-content">-->
+<!--                            <img src="assets/images/carousel_02.jpg" alt="carousel">-->
+<!--                            <div class="carousel-text  bg_semi_white p-2">-->
+<!--                                <h2><a href="#">اخطار برای همه</a></h2>-->
+<!--                                <p>مشاور</p>-->
+<!--                            </div>-->
+<!--                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single-carousel">-->
+<!--                        <div class="carousel-content">-->
+<!--                            <img src="assets/images/carousel_03.jpg" alt="carousel">-->
+<!--                            <div class="carousel-text  bg_semi_white p-2">-->
+<!--                                <h2><a href="#">گزینه دیگری برای</a></h2>-->
+<!--                                <p>مشاور</p>-->
+<!--                            </div>-->
+<!--                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single-carousel">-->
+<!--                        <div class="carousel-content">-->
+<!--                            <img src="assets/images/carousel_04.jpg" alt="carousel">-->
+<!--                            <div class="carousel-text  bg_semi_white p-2">-->
+<!--                                <h2><a href="#">آموزش و پرورش و خدمات</a></h2>-->
+<!--                                <p>مشاور</p>-->
+<!--                            </div>-->
+<!--                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single-carousel">-->
+<!--                        <div class="carousel-content">-->
+<!--                            <img src="assets/images/carousel_05.jpg" alt="carousel">-->
+<!--                            <div class="carousel-text  bg_semi_white p-2">-->
+<!--                                <h2><a href="#">خدمات تحویل خانه</a></h2>-->
+<!--                                <p>مشاور</p>-->
+<!--                            </div>-->
+<!--                            <a class="next-btn" href="#"><i class="fa fa-arrow-right"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <!-- End Full Width Carousel -->
 <!-- Start Blog -->
-<section class="blog-section section-ptb" data-aos="fade-up">
-    <div class="blog-area">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-6 mb-xm-5">
-                    <div class="single-blog">
-                        <div class="blog-content">
-                            <div class="blog-thumb">
-                                <img class="img-fluid" src="assets/images/blog_01.jpg" alt="blog">
-                                <a href="#" class="plus-effect"></a>
-                            </div>
-                            <div class="blog-text p-4 bg_hover text-white">
-                                <div class="post-meta">خرداد 7 1398</div>
-                                <h2><a class="text-white" href="#">قالب چند منظوره شرکتی و تک صفحه ای و چند صفحه ای.</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="single-blog">
-                        <div class="blog-content">
-                            <div class="blog-thumb">
-                                <img class="img-fluid" src="assets/images/blog_02.jpg" alt="blog">
-                                <a href="#" class="plus-effect"></a>
-                            </div>
-                            <div class="blog-text p-4 bg_hover text-white">
-                                <div class="post-meta">خرداد 7 1398</div>
-                                <h2><a class="text-white" href="#">بهترین قالب شرکتی چند منظوره از نوع گرافیک.</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--<section class="blog-section section-ptb" data-aos="fade-up">-->
+<!--    <div class="blog-area">-->
+<!--        <div class="container">-->
+<!---->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 mb-xm-5">-->
+<!--                    <div class="single-blog">-->
+<!--                        <div class="blog-content">-->
+<!--                            <div class="blog-thumb">-->
+<!--                                <img class="img-fluid" src="assets/images/blog_01.jpg" alt="blog">-->
+<!--                                <a href="#" class="plus-effect"></a>-->
+<!--                            </div>-->
+<!--                            <div class="blog-text p-4 bg_hover text-white">-->
+<!--                                <div class="post-meta">خرداد 7 1398</div>-->
+<!--                                <h2><a class="text-white" href="#">قالب چند منظوره شرکتی و تک صفحه ای و چند صفحه ای.</a></h2>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-6">-->
+<!--                    <div class="single-blog">-->
+<!--                        <div class="blog-content">-->
+<!--                            <div class="blog-thumb">-->
+<!--                                <img class="img-fluid" src="assets/images/blog_02.jpg" alt="blog">-->
+<!--                                <a href="#" class="plus-effect"></a>-->
+<!--                            </div>-->
+<!--                            <div class="blog-text p-4 bg_hover text-white">-->
+<!--                                <div class="post-meta">خرداد 7 1398</div>-->
+<!--                                <h2><a class="text-white" href="#">بهترین قالب شرکتی چند منظوره از نوع گرافیک.</a></h2>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <?php include_once "inc/Sidebar.php"?>
 <?php include_once "inc/Footer.php"?>

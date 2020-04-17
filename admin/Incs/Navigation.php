@@ -20,7 +20,7 @@
             </a>
         </li>
       <li class="naw-item">
-		 <a class="nav-link " href="../" >
+		 <a class="nav-link " href="/cms-p/index" >
           صفحه اصلی
         </a>
       </li>

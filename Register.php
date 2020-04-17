@@ -40,7 +40,7 @@ if ($ExistUser){
     }
    }
 if (!$ErrorMsg){
-    header("location: index.php");
+    header("location: /cms-p/index.php");
 }
 }
 

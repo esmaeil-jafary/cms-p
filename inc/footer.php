@@ -8,7 +8,7 @@
                 <div class="col-lg-3 col-md-6 mb-xm-5">
                     <div class="single-widget">
                         <div class="footer-logo mb-4">
-                            <a href="#"><img src="assets/images/footer_logo.png" alt="site title"></a>
+
                         </div>
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
                         <div class="social-accounts">

@@ -44,7 +44,7 @@ if (!isset($_SESSION["Rol"]) || !$UserObj->IsAdmin($_SESSION["UserName"])){
   <link href="/cms-p/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="/cms-p/css/sb-admin.css" rel="stylesheet">
+  <link href="/cms-p/csbootf/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
 </head>
