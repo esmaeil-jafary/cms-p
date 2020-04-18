@@ -8,13 +8,18 @@
 
         <a class="text-white mr-5 " href="/cms-p/Register.php"><i class="fa fa-pen"></i>ثبت نام</a></div>
 
-        <?php
-        include_once 'inc/jdf.php';
-        $date = jdate("Y/n/j");
-        echo "<h5 class='fa fa-calendar-check text-white'>$date </h5>";
+       <?php
+         include_once 'jdf.php';
+
+    $day_number = jdate('j');
+    $month_number = jdate('n');
+    $year_number = jdate('y');
+    $day_name = jdate('l');
+    echo "<h5 class='text-white'> امروز $day_name ، $day_number-$month_number-$year_number</h5>";
 
 
-        ?>
+
+  ?>
 
     </ul>
 </div>

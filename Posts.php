@@ -84,6 +84,7 @@ if (isset($_GET["catid"])) {
 
        <!--  پست ها-->
     <div class="col-md-6">
+        <?php include_once "inc/Slider.php"?>
 <div class="row">
                     <h1 class="card-header text-center bg-primary rounded w-100 mr-3 ml-3 mb-3">آخرین پست ها در این قسمت می باشد</h1>
 </div>
@@ -158,7 +159,7 @@ if (isset($_GET["catid"])) {
 
 
     </div>
-    <!--        ساید بار سمت چپ-->
+       <!--        ساید بار سمت چپ-->
     <div class="col-md-3">
         <div class="row">
             <?php

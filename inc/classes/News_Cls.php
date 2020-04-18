@@ -15,11 +15,14 @@ class news extends DB
         $connection->query(" delete from news where id = $qId");
     }
 //	اینسرت کردن
+
     public function addNews($name,$discrip){
+
+
         $cnn=$this->connect();
         $qname = $cnn->quote($name);
         $qdiscript = $cnn->quote($discrip);
-        $cnn->query("insert into news (Title , Content,Date ) values ($qname , $qdiscript ,now())");
+        $cnn->query("insert into news (Title , Content,Date ) values ($qname , $qdiscript ,$jdate");
     }
 //	آبدیت کردن
     public function getUpNews($id){

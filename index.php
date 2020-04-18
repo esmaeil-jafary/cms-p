@@ -6,7 +6,7 @@
 
 <?php include_once "inc/Header.php"?>
 <?php include_once "inc/navigation.php"?>
-<?php include_once "inc/Slider.php"?>
+
 
 
 
