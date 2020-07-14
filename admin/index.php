@@ -118,7 +118,7 @@ $ReportObj=new Report();
         </div>
 
         <div class="col-lg-3 col-md-6">
-            <div class="card bg-warning text-white">
+            <div class="card bg-danger text-white">
                 <div class="card-header">
                     <div class="container">
                         <div class="row">

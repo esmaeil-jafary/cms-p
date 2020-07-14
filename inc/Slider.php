@@ -45,8 +45,8 @@
 <!--</div>-->
 <!--</body>-->
 <!--</html>-->
-<div class="container">
-    <div class="row">
+
+    <div class="row ">
         <div class="col-md-12 offset-2 mt-3">
             <div id="mySlideShow" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -54,9 +54,10 @@
                     <li data-target="#mySlideShow" data-slide-to="1" ></li>
                     <li data-target="#mySlideShow" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner rounded">
                     <div class="carousel-item active">
                         <img class="d-block w-100 h-25 " src="images/php.jpg">
+<button class="col-md"><h3>kjhhjtj</h3></button>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 " src="images/html.jpg" alt="">
@@ -75,4 +76,4 @@
             </div>
         </div>
     </div>
-</div>
+

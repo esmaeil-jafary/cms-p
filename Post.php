@@ -1,7 +1,5 @@
 <?php include "inc/header.php" ?>
-<?php include "inc/navigation.php" ?>
 <?php
-include_once "inc/classes/db.php";
 include_once "inc/classes/Post_Cls.php";
 include_once "inc/classes/Comment_cls.php";
 //زمانیکه از صفحه ایندکس روی لینک مورد نظر کلیک شود بوسیله پی ایدی آن فرستاده می شود اینجا
@@ -102,5 +100,5 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
 
 
         <!-- Blog Sidebar Widgets Column -->
-        <?php include "inc/sidebar.php" ?>
-        <?php include "inc/footer.php" ?>
+
+
