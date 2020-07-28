@@ -47,7 +47,7 @@
 <!--</html>-->
 
     <div class="row ">
-        <div class="col-md-12 offset-2 mt-3">
+        <div class="col-md-12 offset-2 mt-3 mb-3 shadow " >
             <div id="mySlideShow" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#mySlideShow" data-slide-to="0" class="active"></li>
@@ -56,14 +56,14 @@
                 </ol>
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
-                        <img class="d-block w-100 h-25 " src="images/php.jpg">
-<button class="col-md"><h3>kjhhjtj</h3></button>
+                        <img class="d-block " src="images/php.jpg" style="width: 1360px; height: 70px;">
+<!--<button class="col-md"><h3>kjhhjtj</h3></button>-->
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 " src="images/html.jpg" alt="">
+                        <img class="d-block w-100 " src="images/html.jpg" style="width: 1360px; height: 70px; >
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100 " src="images/python.jpg" alt="">
+                        <img class="d-block w-100 " src="images/python.jpg" style="width: 1360px; height: 70px; >
                     </div>
                 </div>
                 <a href="#mySlideShow" class="carousel-control-prev" data-slide="prev">

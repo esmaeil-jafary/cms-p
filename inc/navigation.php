@@ -59,11 +59,11 @@
 <!---->
 <!--    </ul>-->
 <!--</div>-->
-<div class="row mt-1" style="background-image: url('/cms-p/images/back.jpg');height: 300px;">
+<!--<div class="row mt-1" style="background-image: url('/cms-p/images/back.jpg');height: 60px;">-->
+<div class="row mt-1 bg-info" >
 
-
-    <div class="col-md-2 float-right">
-        <a href="#"><img class="rounded" src="images/haib.png"></a>
+    <div class="col-md-1 float-right bg-dark">
+		<a href="index"><h2 class=" text-center text-white h-100 mt-1"> HAIB </h2></a>
 
     </div>
 <!--    <div class="col-md-8">-->
@@ -100,8 +100,8 @@
 
     <div class="col-md-4">
         <nav class="navbar navbar-expand-md navbar-dark " >
-            <button class="navbar-toggler bg-info " type="button" data-toggle="collapse" data-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" value="منو">
+            <button class="navbar-toggler bg-info  " type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" value="منو" >
                 <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
@@ -258,7 +258,7 @@
         </nav>
     </div>
 
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4 mt-1">
             <form class="navbar-form navbar-left" method="post" action="/cms-p/Search.php">
                 <div class="input-group">
                     <input class="form-control" name="SearchQuery" type="text" placeholder="جستجو کنید" required>
@@ -276,9 +276,9 @@
 
 
 
-    <div class="col-md-2 mt-3">
+    <div class="col-md-3 float-left">
         <a href="index">
-            <h2><i class="fa fa-home float-left ml-4 text-info"></i></h2>
+            <h2><i class="fa fa-home float-left ml-4 "></i></h2>
         </a>
         <a href="index">
             <h3><i class="fa fa-phone float-left ml-4 text-justify"></i></h3>

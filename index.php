@@ -15,10 +15,16 @@
 
 <!-- End Slider -->
 <!-- Start Featured -->
-
-
-
-
+<div class="row">
+    <span class="col-md-2"></span>
+    <span class="col-md-8">
+        <h2 class="rounded mt-1 bg-light"><marquee direction="right">جدیدترین خبرهای دنیای مجازی و تجارت الکترونیک در وبسایت IT FIELD</marquee></h2>
+    </span>
+    <span class="col-md-2"></span>
+</div>
+<div class="row">
+    <?php include_once "inc/Slider.php"?>
+</div>
 <?php include_once "Posts.php"?>
 
 <!-- End Featured -->
@@ -144,7 +150,7 @@
 <!--                    </div>-->
 <!--                </div>-->
 <!--                <div class="col-lg-4 col-md-6">-->
-<!--                    <!--div class="contact-form bg_semi_white">-->
+<!--                   div class="contact-form bg_semi_white">-->
 <!--                        <div class="form-header bg_light_3 p-4">-->
 <!--                            <h2>رزرو وقت</h2>-->
 <!--                        </div>-->
@@ -168,7 +174,7 @@
 <!--                            </div>-->
 <!--                            <button class="read-more-btn" type="submit">شروع به صحبت کردن <i class="fa fa-arrow-right"></i></button>-->
 <!--                        </form>-->
-<!--                    </div-->-->
+<!--                    </div-->
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->

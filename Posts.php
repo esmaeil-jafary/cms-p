@@ -49,13 +49,13 @@ if (isset($_GET["catid"])) {
 <div class="row">
     <!--        ساید بار سمت راست-->
 
-    <div class="row col-md-3">
-        <div class="row">
-            <h1 class="card-header rounded text-center bg-info w-100 ml-3 mb-3 ">دسته ها</h1>
-        </div>
-
-
-        <li class="list-unstyled mr-1">
+    <div class="row col-md-3 mb-3">
+<!--        <div class="  bg-info w-100 h-1 mt-1 mr-2">-->
+<!--            <h1 class="text-center text-white "></h1>-->
+<!--        </div>-->
+<ul class="list-unstyled mt-3 shadow">
+    <li class="bg_semi_dark"><h3 class="text-center">دسته بندی ها</h3></li>
+        <li class=" ">
 
             <?php
             include_once "inc/classes/db.php";
@@ -77,19 +77,19 @@ if (isset($_GET["catid"])) {
         ?>
 
         </li>
-
+</ul>
     </div>
 
 
 
     <!--  پست ها-->
-    <div class=" col-md-6">
-        <?php include_once "inc/Slider.php"?>
-        <div class="row">
-            <h1 class=" text-center rounded w-100 mr-3 ml-3 mt-3 mb-3">آخرین مطالب</h1>
-        </div>
+    <div class=" col-md-6 ">
 
-<div class="row">
+
+            <h3 class=" text-center  bg_semi_dark rounded w-100 mr-3 ml-3 mt-3 mb-3 ">آخرین مطالب</h3>
+
+
+<div class="row shadow">
             <!-- First Blog Post -->
             <?php
 
@@ -180,12 +180,12 @@ if (isset($_GET["catid"])) {
             $New = $News->getNewsView();
             ?>
             <div class="card-body">
-                <h1 class="text-center text-muted">خبرهای فوری و مسائل روز</h1>
+                <h3 class="text-center bg_semi_dark">خبرهای فوری و مسائل روز</h3>
                 <hr>
                 <?php
                 foreach ($New as $N) {
                     ?>
-                    <ul class="list-unstyled btn-info mt-1">
+                    <ul class="list-unstyled btn-info mt-1 shadow">
                         <h3><i class="fa fa "></i><?= $N["Title"] ?></h3>
                         <li><h3><?= $N["Content"] ?></h3></li>
                         <p>زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>

@@ -1,7 +1,8 @@
     <!-- Blog Categories Well -->
     <div class="row">
 
-    <div class="col-md-9">
+<span class="col-md-1"></span>
+        <span class="col-md-10">
         <section class="featured-section section-ptb-3" data-aos="fade-up">
             <div class="featured-area">
                 <div class="container">
@@ -22,7 +23,7 @@
                                 <div class="feature-thumb">
                                     <img class="img-fluid" src="assets/images/icon_02.png" alt="feature" />
                                 </div>
-                                <h4>مفید وقت بزار</h4>
+                                <h4>مفیدمفید وقت بزار</h4>
                                 <div class="feature-text">
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
                                 </div>
@@ -43,7 +44,8 @@
                 </div>
             </div>
         </section>
-    </div>
+</span>
+        <span class="col-md-1"></span>
 
 
 </div>
