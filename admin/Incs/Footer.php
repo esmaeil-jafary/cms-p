@@ -1,7 +1,7 @@
   <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © HAIB.IR Website</span>
+            <span>Copyright ©IT FIELD Website</span>
           </div>
         </div>
       </footer>

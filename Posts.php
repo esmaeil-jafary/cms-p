@@ -83,7 +83,8 @@ if (isset($_GET["catid"])) {
 
 
     <!--  پست ها-->
-    <div class=" col-md-6 ">
+    
+ <div class=" col-md-6 ">
 
 
             <h3 class=" text-center  bg_semi_dark rounded w-100 mr-3 ml-3 mt-3 mb-3 ">آخرین مطالب</h3>
@@ -108,9 +109,9 @@ if (isset($_GET["catid"])) {
 
 <div class=" col-md-3 borde  ">
             <li class="list-unstyled border ">    <img class="text-center rounded-top" src="/cms-p/images/<?= $post["Image"] ?>"
-                     alt="" style="width: 100px; height: 100px;" "></li>
+                     alt="" style="width: 154px; height: 222px;" "></li>
 </div>
-                                                               <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
+<!--برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
 <div class=" col-md-9 border mb-3">
                  
 
@@ -138,10 +139,9 @@ if (isset($_GET["catid"])) {
                 <ul class="pagination">
                     <?php
                     for ($i = 1; $i <= $PageCount; $i++) { ?>
-                        <!--                           به تعداد صفحاتی که داریم لینک درست کنیم-->
+                        <!--            به تعداد صفحاتی که داریم لینک درست کنیم-->
 
-                        <li class="page-item <?php if ($i == $Page) echo "active" ?>"><a href="?Page=<?= $i ?>"
-                                                                                         class="page-link"><?= $i ?></a>
+                        <li class="page-item <?php if ($i == $Page) echo "active" ?>"><a href="?Page=<?= $i ?>"class="page-link"><?= $i ?></a>
                         </li>
 
                     <?php }
@@ -153,15 +153,7 @@ if (isset($_GET["catid"])) {
             </nav>
 
 </div>
-            <!-- Pager -->
-            <!--            <ul class="">-->
-            <!--                <li class="btn  btn-outline-primary">-->
-            <!--                    <a href="#">&larr; Older</a>-->
-            <!--                </li>-->
-            <!--                <li class="btn float-md-right btn-outline-primary">-->
-            <!--                    <a href="#">Newer &rarr;</a>-->
-            <!--                </li>-->
-            <!--            </ul>-->
+           
         </li>
 
 
@@ -185,7 +177,7 @@ if (isset($_GET["catid"])) {
                 <?php
                 foreach ($New as $N) {
                     ?>
-                    <ul class="list-unstyled btn-info mt-1 shadow">
+                    <ul class="list-unstyled  mt-1 shadow">
                         <h3><i class="fa fa "></i><?= $N["Title"] ?></h3>
                         <li><h3><?= $N["Content"] ?></h3></li>
                         <p>زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>

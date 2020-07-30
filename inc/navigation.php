@@ -23,79 +23,14 @@
 
     </ul>
 </div>
-<!--<div class="navbar bg-info">-->
-<!--    <div class="row">-->
-<!--        <ul>-->
-<!---->
-<!--<a href="#">-->
-<!---->
-<!--    <h1><i class="fa fa-home" style="width: 60px;"></i></h1>-->
-<!--    <span class="text">صفحه نخست</span>-->
-<!--            </a>-->
-<!---->
-<!--            </a>-->
-<!--<div style="width: auto;height: 40px; float: right;">-->
-<!---->
-<!--</div>-->
-<!--            <a href="/Forum/index">-->
-<!--                <i class="fa fa-users"></i>-->
-<!--                <span class="text">تالار گفتگو</span>-->
-<!--            </a>-->
-<!--            <a href="/Users/CooperationForm.aspx">-->
-<!--                <i class="fa fa-user-plus"></i>-->
-<!--                <span class="text">جذب مدرس</span>-->
-<!--            </a>-->
-<!--            <a href="/FooterInfo/ContactUS.aspx">-->
-<!--                <i class="fa fa-phone"></i>-->
-<!--                <span class="text">تماس با ما</span>-->
-<!--            </a>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--    </div>-->
-<!---->
-<!---->
-<!---->
-<!--    </ul>-->
-<!--</div>-->
-<!--<div class="row mt-1" style="background-image: url('/cms-p/images/back.jpg');height: 60px;">-->
+
 <div class="row mt-1 bg-info" >
 
     <div class="col-md-1 float-right bg-dark">
-		<a href="index"><h2 class=" text-center text-white h-100 mt-1"> HAIB </h2></a>
+		<a href="index"><h2 class=" text-center text-white h-100 mt-1"> IT FIELD </h2></a>
 
     </div>
-<!--    <div class="col-md-8">-->
-<!--        <div class="site-contact mt-2">-->
-<!---->
-<!--            <form class="col-md" method="post" action="/cms-p/Search.php">-->
-<!--                <input class="col-md-6 rounded" name="SearchQuery" type="text" placeholder="جستجو کنید" required>-->
-<!--                <button class="rounded bg-primary mt-1" name="SearchSubmit" type="submit"><i class="fa fa-search"></i>-->
-<!--                </button>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
 
-
-
-<!--<nav class="navbar bg_semi_dark navbar-expand-md  mb-md-3 mt-1">-->
-
-<!--    <a class="navbar-brand" href="/cms-p/index">صفحه اصلی</a>-->
-<!--    <button class="navbar-toggler fa-menorah" type="button" data-toggle="collapse" data-target="#navbarText"-->
-<!--            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarText">-->
-<!--        <ul class="open- navbar-nav mr-auto">-->
-
-
-<!--<div style="background-image: url('/cms-p/images/back.jpg'); height: 400px;">-->
-
-
-
-
-<!--        <a href="#"><img class="rounded" src="images/haib.png"></a>-->
 
 
     <div class="col-md-4">
@@ -111,15 +46,7 @@
 
 
 
-                    <!-- <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li> -->
+                 
                     <?php
                     $MenuObj = new Menu();
                     $Menus = $MenuObj->getMenu();
@@ -190,26 +117,9 @@
                     <?php endforeach; ?>
 
 
-                    <!--                        <div class="input-group">-->
-                    <!--                            <input  type="text" class="form-control">-->
-                    <!--                            <span class="btn-group">-->
-                    <!--                       <button  class="btn btn-primary " type="submit">-->
-                    <!--                      <span class="fa fa-search "></span>-->
-                    <!--                   </button>-->
-                    <!--                </span>-->
-                    <!--                        </div>-->
-                    <!--                    </form>-->
-                    <!--
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i><span class="product-count">5</span></a>
-                                </li>
-                    -->
+                   
 
-                    <!--    برای ایجاد ajax-->
-
-                    <!--                <div class="form-group mt-5">-->
-                    <!--                    <input class="form-control" type="text" id="text" placeholder="type Is">-->
-                    <!--                </div>-->
+                 
                     <div id="cn">
 
                     </div>

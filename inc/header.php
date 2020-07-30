@@ -15,7 +15,7 @@ include_once "inc/classes/User_Cls.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>قالب شرکتی چند منظوره ریسپانسیو - ایکس باینز</title>
+    <title>سایت IT FIELD</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="/cms-p/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -30,27 +30,4 @@ include_once "inc/classes/User_Cls.php";
 
 
 <!-- Start Header -->
-<header>
-<!--    <div class="header-top bg_semi_dark">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    <div class="header-top-content">-->
-<!--                        <div class="site-title">-->
-<!--                            <a href="#">خوش آمدید به ایکس باینز.</a>-->
-<!---->
-<!--                        </div>-->
-<!--                        <div class="site-contact">-->
-<!--                            <p>+88 569 867 689 <span>یا</span> +00 567 564 358</p>-->
-<!--                            <a class="curbe-btn" href="#">شروع کنید <i class="fa fa-arrow-right"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    Slider-->
-
-</header>
 

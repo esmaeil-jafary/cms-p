@@ -10,7 +10,7 @@
                         <div class="footer-logo mb-4">
 
                         </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                        <p>وبسایت خبری IT FIELD منعکس کننده خبرهای روز فناوری اطلاعات</p>
                         <div class="social-accounts">
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -25,11 +25,11 @@
                         <h3 class="mb-4">خدمات ما</h3>
                         <div class="widget-list">
                             <ul>
-                                <li><a href="#">اطمینان و راضی</a></li>
-                                <li><a href="#">پشتیبانی مالیاتی و حقوقی</a></li>
-                                <li><a href="#">منابع بازار</a></li>
-                                <li><a href="#">خدمات مالی</a></li>
-                                <li><a href="#">استراتژی بازار</a></li>
+                                <li><a href="#">پیشرفت های دنیای مجازی</a></li>
+                                <li><a href="#">خبرهای بازار بورس </a></li>
+                                <li><a href="#">خبرهای ارزهای دیجیتال </a></li>
+                                <li><a href="#">خبرهای صاحبان صنایع IT</a></li>
+                                <li><a href="#">استراتژی بازارهای علم و فناوری</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,10 +53,10 @@
                         <h3 class="mb-4">با ما در تماس باشید</h3>
                         <div class="widget-list">
                             <ul>
-                                <li>ایران، ارومیه، شاهین دژ پلاک 5</li>
-                                <li>شرکت بزرگ راست چین و فارسی سازی انواع قالب</li>
-                                <li>info@example.com</li>
-                                <li>+88017545235</li>
+                                <li>دانشگاه علمی کاربردی شهرقدس</li>
+                                <li>ارائه دهنده زبان های برنامه نویسی</li>
+                                <li>jafaryesmaeil340@gmail.com</li>
+                                <li>09396506246</li>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                     <div class="col-md-12">
                         <div class="footer-bottom d-flex justify-content-between">
                             <div class="copyright-text">
-                                <p> کپی رایت &copy; 1398 تمامی حقوق سایت محفوظ است <a href="index-2.html"> ایکس باینز </a> </p>
+                                <p> کپی رایت &copy; حق کپی رایت با <a href="index-2.html">  IT FIELD </a> </p>
                             </div>
                             <div class="privacy-text">
                                 <p><a href="#">قوانین و شرایط سایت</a> | <a href="#">حریم خصوصی</a></p>
