@@ -46,51 +46,18 @@ if (isset($_GET["catid"])) {
 <!-- Page Content -->
 
 
-<div class="row">
-    <!--        ساید بار سمت راست-->
 
-    <div class="row col-md-3 mb-3">
+   
+
+   
 <!--        <div class="  bg-info w-100 h-1 mt-1 mr-2">-->
 <!--            <h1 class="text-center text-white "></h1>-->
 <!--        </div>-->
-<ul class="list-unstyled mt-3 shadow">
-    <li class="bg_semi_dark"><h3 class="text-center">دسته بندی ها</h3></li>
-        <li class=" ">
-
-            <?php
-            include_once "inc/classes/db.php";
-            include_once "inc/classes/Categorys_cls.php";
-            $cat = new Category ();
-            $cats = $cat->getAllCategories();
-            foreach ($cats as $c){?>
-        <li>
-            <img class="rounded-top ml-auto w-100 " src="/cms-p/images/<?= $c["Image"] ?>"
-                 alt="" >
-        </li>
-
-        <h3 class="text-danger text-center rounded-bottom bg-info w-100">
-            <a href="/cms-p/index/Category/<?= $c["id"] ?>"><?= $c["name"] ?></a>
-        </h3>
-
-
-        <?php }
-        ?>
-
-        </li>
-</ul>
-    </div>
-
-
-
-    <!--  پست ها-->
     
- <div class=" col-md-6 ">
 
-
-            <h3 class=" text-center  bg_semi_dark rounded w-100 mr-3 ml-3 mt-3 mb-3 ">آخرین مطالب</h3>
-
-
-<div class="row shadow">
+    <!--  پست ها-->      
+<div class="row ">
+<div class="row">
             <!-- First Blog Post -->
             <?php
 
@@ -107,33 +74,43 @@ if (isset($_GET["catid"])) {
                 ?>
 
 
-<div class=" col-md-3 borde  ">
-            <li class="list-unstyled border ">    <img class="text-center rounded-top" src="/cms-p/images/<?= $post["Image"] ?>"
-                     alt="" style="width: 154px; height: 222px;" "></li>
-</div>
+
 <!--برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-<div class=" col-md-9 border mb-3">
-                 
 
-                <li class="list-unstyled">
-                <h2 class=""><a class="h3" href="/cms-p/Posts/<?= $post["id"] ?>"><?= $post["Title"] ?></a></h2>
-<h3 class="lead">
-                    <!--                 برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
-                    نوشته: <a href="?Author=<?= $post["Author"] ?>"><?= $post["Author"] ?></a>
-                </h3>
-                <h3 class="btn-light text-center h3"><?= substr($post["Content"], 0, 200) ?></h3>
-
-                <h3 class="text-info"><span class="fa fa-clock h3 text-danger "></span><?= $post["Date"] ?></h3>
-                <!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
-
-                <!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
-                <a class="btn btn-primary mb-4 " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span
-                            class="fa fa-angle-left"></span></a>
-
+<div class="row shadow mt-2 mb-2">
+	
+<div class="col-md-8">	
+	
+<div class="row">
+  <a class="h3 text-primary mr-5 " href="/cms-p/Posts/<?= $post["id"] ?>"><?= $post["Title"] ?></a>
 </div>
-                <!--                        <hr style="margin-bottom: 5px;">-->
+  <!--برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
+	<div class="row ">
+		 <p class="h4 mr-5"><?= substr($post["Content"], 0, 200) ?></p>
+ 
+	</div>
+</div>
+	<div class="col-md-3">
+	<img class="text-center rounded float-left  " src="/cms-p/images/<?= $post["Image"] ?>"alt="" style="width: 120px; height: 100px;">
+	</div>
+	<div class="row mt-1 mb-2">
+	<div class="col-md-4 h4 mr-3 text-center"> نوشته: <a class=" text-danger" href="?Author=<?= $post["Author"] ?>"><?= $post["Author"] ?></a>
+		</div>
+		<div class="col-md-3 mb-2 text-center"><span class="fa fa-clock h3 text-danger "></span><?=$post["Date"]?>
+		</div>
+		<div class="col-md-4 h6 mb-2"> <a class="btn btn-primary mb-4 float-left " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span class="fa fa-angle-left"></span></a></div>
+	</div>
+	  <!-- برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
+
+                <!--یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->		
+
+	
+</div>
+	</div>
+<div class="row">
             <?php }
             ?>
+	
             <!--         برای اینکه در اخر صفحه متل گوگل برای شماره صفحات پیج کانت لینک بگذاریم -->
             <nav>
                 <ul class="pagination">
@@ -146,48 +123,11 @@ if (isset($_GET["catid"])) {
 
                     <?php }
                     ?>
-                    <li>
+                   
                 </ul>
 
 
             </nav>
 
 </div>
-           
-        </li>
-
-
-
-
-    </div>
-
-
-    <!--        ساید بار سمت چپ-->
-    <div class="col-md-3">
-        <div class="row">
-            <?php
-            include_once "inc/classes/db.php";
-            include_once "inc/classes/Categorys_cls.php";
-            $News = new Post();
-            $New = $News->getNewsView();
-            ?>
-            <div class="card-body">
-                <h3 class="text-center bg_semi_dark">خبرهای فوری و مسائل روز</h3>
-                <hr>
-                <?php
-                foreach ($New as $N) {
-                    ?>
-                    <ul class="list-unstyled  mt-1 shadow">
-                        <h3><i class="fa fa "></i><?= $N["Title"] ?></h3>
-                        <li><h3><?= $N["Content"] ?></h3></li>
-                        <p>زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>
-                    </ul>
-
-                <?php }
-                ?>
-
-            </div>
-
-        </div>
-    </div>
 </div>
