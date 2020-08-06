@@ -3,6 +3,7 @@
             <?php
             include_once "inc/classes/db.php";
             include_once "inc/classes/Categorys_cls.php";
+//ارتباط با دیتا بیس این قسمت در قسمت آخر پست سی ال اس نوشته شده
             $News = new Post();
             $New = $News->getNewsView();
             ?>
@@ -14,9 +15,9 @@
                 foreach ($New as $N) {
                     ?>
                     <ul class="list-unstyled  mt-1 shadow">
-                        <h3><i class="fa fa "></i><?= $N["Title"] ?></h3>
-                        <li><h3><?= $N["Content"] ?></h3></li>
-                        <p>زمان ثبت خبر:<span class="fa fa-clock "></span><?= $N["Date"] ?></p>
+                        <li class="h3 text-primary"><?= $N["Title"] ?></li>
+                        <li class="h5"><?= $N["Content"] ?></li>
+<li class="text-danger"><p><span class="fa fa-clock ">&nbsp;زمان ثبت خبر:</span><?= $N["Date"] ?></p></li>
                     </ul>
 
                 <?php }

@@ -96,9 +96,9 @@
                     //قبلا حلقه را می بستیم اما پی اچ پی یک روش دیگر هم دارد  که بصورت زیر است
                     foreach ($MasterMenu as $men): ?>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle " type="button"
-                                    data-toggle="dropdown"><?= $men["name"] ?>
-                                <span class="caret"></span></button>
+    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><?= $men["name"] ?>
+     	<span class="caret"></span>
+	</button>
                             <ul class="dropdown-menu" role="menu">
                                 <!--                برای اینکه منو باد زیر منوهای خود را صدا بزند از تابع بازگشتی استفتده می کنیم -->
                                 <?php

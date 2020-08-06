@@ -1,4 +1,5 @@
 <?php include "inc/header.php" ?>
+
 <?php
 include_once "inc/classes/Post_Cls.php";
 include_once "inc/classes/Comment_cls.php";
@@ -23,24 +24,22 @@ if (isset($_POST["SendComment"])) {
 $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
 
 ?>
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-
-            <!-- First Blog Post -->
-            <h2>
-                <!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                <a href="Post.php?Pid=<?= $post["id"] ?>"><?= $post["Title"] ?></a>
-            </h2>
-            <p class="lead">
-                نویسنده: <a href="index.php"><?= $post["Author"] ?></a>
-            </p>
-            <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?= $post["Date"] ?></p>
-            <hr>
-            <img class="img-fluid" src="/images/<?= $post["Image"] ?>" alt="">
-            <hr>
-            <p><?= $post["Content"] ?></p>
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6 card bg-light">
+<ul class="list-unstyled">
+	<li class="card-header mb-1 h3"><a href="Post.php?Pid=<?= $post["id"] ?>"><?= $post["Title"] ?></a></li>	
+	<li class="card-header mb-1 h3">
+		<!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
+		<p class="lead">
+                نویسنده: <a href="index.php"><?= $post["Author"] ?></a></p>
+	</li>	
+	<li class="card-header mb-1 h3">
+	<p>ساعت ثبت پست:<span class="fa fa-clock "></span><?= $post["Date"] ?></p>
+	</li>	
+	<li > <img class="img-fluid" src="/images/<?= $post["Image"] ?>" alt=""></li>	
+	<li>
+	  <p><?= $post["Content"] ?></p>
             <hr>
             <div class="card bg-light">
                 <div class="card-header">
@@ -74,26 +73,49 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
                     </form>
                 </div>
     </div>
-</div>
 
-                <!-- /.input-group -->
+
+
+<!-- /.input-group -->
 <!--            یک حلقه ایجاد مکنیم تا کامنت ها را نمایش دهیم-->
             <?php
             foreach ($PostComment as $Comment) { ?>
 
-                    <div class="card">
+                    <div class="card mt-1">
                         <div class="card-body">
-                            <div>
-                            <span class="font-weight-bolder p-3"><?= $Comment["Author"] ?></span>
-                            <div>
-                                <span class="smalle"><?= $Comment["Date"] ?></span><br>
+                           <ul class="list-unstyled">
+							   <div class="row">
+								   	   
+                            <li class=" col-md-6">
+								<span class="fa fa-clock">&nbsp;زمان ثبت کامنت:</span><?= $Comment["Date"] ?></li>
+							   <li class=" col-md-6"> 
+								   <span class=" text-danger"><?= $Comment["Author"] ?></span>
+								   </li>
+							
+								   </div>
+							   <li>
                                <span class=""><?= $Comment["Content"] ?></span>
-                            </div>
-
-                        </div>
+                            </li>
+</ul>
+                       
                     </div>
             <?php }
             ?>
+	</div>
+	</li>	
+	</ul>	
+	
+</div>
+
+	
+</div>
+
+
+
+
+        <!-- Blog Entries Column -->
+
+            <!-- First Blog Post -->
 
 
 

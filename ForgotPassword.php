@@ -28,7 +28,7 @@ $Token=bin2hex(openssl_random_pseudo_bytes(16));
   $EmailText=" Link ra dar mororgar copy konid : <a href='http://localhost/cms-p/Reset?Token=$Token&Uid=$Uid'> Click Me </a>";
 
 if ($EmailObj->SendEmile("ResetPassword",$EmailText,$Email)){
-header("Location: /cms-p/index");
+header("Location:/cms-p/index.php");
 }
 $ErrorMsg="ارسال ایمیل موفقیت آمیز نبود";
 }else{

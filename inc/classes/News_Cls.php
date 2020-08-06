@@ -3,7 +3,8 @@ class news extends DB
 {
     public function getallNews()
     {
-        return $this->connect()->query("select * from news")->fetchAll (PDO::FETCH_ASSOC);
+		$postAsc="select * from news,order by Date";
+        return $this->connect()->query($postAsc)->fetchAll (PDO::FETCH_ASSOC);
     }
 //  دیلیت کردن
     public function deleteNews($catId)
@@ -15,14 +16,11 @@ class news extends DB
         $connection->query(" delete from news where id = $qId");
     }
 //	اینسرت کردن
-
     public function addNews($name,$discrip){
-
-
         $cnn=$this->connect();
         $qname = $cnn->quote($name);
         $qdiscript = $cnn->quote($discrip);
-        $cnn->query("insert into news (Title , Content,Date ) values ($qname , $qdiscript ,$jdate");
+        $cnn->query("insert into news (Title , Content,Date ) values ($qname , $qdiscript ,now())");
     }
 //	آبدیت کردن
     public function getUpNews($id){

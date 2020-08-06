@@ -1,5 +1,5 @@
 <!--بالای هدر-->
-<?php include_once "inc/Header.php"?>
+<?php include_once "inc/header.php"?>
 <?php include_once "inc/navigation.php"?>
 <!-- End Header -->
 <!-- Start Slider -->

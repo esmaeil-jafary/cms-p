@@ -82,10 +82,12 @@ if (isset($_GET["catid"])) {
 <div class="col-md-8">	
 	
 <div class="row">
-  <a class="h3 text-primary mr-5 " href="/cms-p/Posts/<?= $post["id"] ?>"><?= $post["Title"] ?></a>
+  <a class="h3 text-primary mr-5 " href="/cms-p/Posts.php/<?= $post["id"] ?>"><?= $post["Title"] ?></a>
 </div>
   <!--برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
 	<div class="row ">
+		 <!-- برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
+
 		 <p class="h4 mr-5"><?= substr($post["Content"], 0, 200) ?></p>
  
 	</div>
@@ -96,13 +98,13 @@ if (isset($_GET["catid"])) {
 	<div class="row mt-1 mb-2">
 	<div class="col-md-4 h4 mr-3 text-center"> نوشته: <a class=" text-danger" href="?Author=<?= $post["Author"] ?>"><?= $post["Author"] ?></a>
 		</div>
-		<div class="col-md-3 mb-2 text-center"><span class="fa fa-clock h3 text-danger "></span><?=$post["Date"]?>
+		<div class="col-md-3 mb-2 text-center h5"><span class="fa fa-clock text-danger "></span>&nbsp;&nbsp;<?=$post["Date"]?>
 		</div>
-		<div class="col-md-4 h6 mb-2"> <a class="btn btn-primary mb-4 float-left " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span class="fa fa-angle-left"></span></a></div>
+		
+         <!--یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
+		<div class="col-md-4 h6 mb-2"> <a class="btn btn-success mb-4 float-left " href="/cms-p/Post/<?= $post["id"] ?>">توضیحات بیشتر.. <span class="fa fa-angle-left"></span></a></div>
 	</div>
-	  <!-- برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
-
-                <!--یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->		
+	 		
 
 	
 </div>
