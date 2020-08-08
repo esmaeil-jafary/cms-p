@@ -1,10 +1,6 @@
 <?php include "Incs/header.php" ?>
 <?php include "Incs/Navigation.php" ?>
-
-
-
-
-    <div id="wrapper">
+   <div id="wrapper">
 
     <!-- Sidebar -->
 <?php include "Incs/Sidebar.php" ?>

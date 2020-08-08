@@ -1,129 +1,37 @@
-<?php include "inc/header.php" ?>
-<?php include "inc/navigation.php" ?>
-<?php include_once "inc/classes/Categorys_cls.php"?>
-<?php 
-	include_once "inc/classes/db.php";
-	include_once "inc/classes/Post_Cls.php";
-$postobj= new Post();
-//    الان می خواهیم در هر صفحه 5 پست بیشتر نشان ندهیم
-$PageLength=5;
-$Page=1;
-if (isset($_GET["Page"])){
-//    یعنی هر پیجی که انتخاب شده بود
-    $Page=$_GET["Page"];
-}
-//اگر شرط ایف را نگذاریم تمام کتگوری ها نمایش میدهد ولی ما میخواهیم فقط کتگوری مورد نظر نمایش داده شو
-$queryString='';
-if (isset($_GET["catid"])){
-//    قبلا گت ال کتگوری گذاشته بودیم که همه را نشان می داد ولی الان شرط می گذاریم
-    $catid=$_GET["catid"];
-    $queryString="catid={$catid}&";
-    $PostCount=$postobj->getAllCatsPostCount($_GET["catid"]);
-    $PageCount= ceil( $PostCount/$PageLength);
-//    باید بگوییم ای دی خواصی که می فرستیم
-$posts=$postobj->GetCategoryPostByPage($_GET["catid"],$PageLength,$Page);
-}
-elseif (isset($_GET["Author"])){
-    $AuthorName=$_GET["Author"];
-    $queryString="Author={$AuthorName}&";
-    $PostCount=$postobj->getAuthorPostCount($_GET["Author"]);
-    $PageCount= ceil( $PostCount/$PageLength);
-//    $posts=$postobj->getPostByAuthor($_GET["Author"]);
-    $posts=$postobj->getAuthorPostByPage($_GET["Author"],$PageLength,$Page);
-}
-else{
-//    برای صفحه بندی
-$queryString='';
-//    تعداد پست هامان را هم با
-    $PostCount=$postobj->getAllPostCount();
-//برای اینکه نشان دهیم پیج کانتمان را و همچنین تابع سیل برای ما رند می کند تعداد صفحات را
-$PageCount= ceil( $PostCount/$PageLength);
-//    تمام پست ها
-//الان برای اینکه روی پیج هر شماره صفحه کلیک کردیم برود به ان صفحه
-//    همچنین شماره صفحه را باید بدهیم
-
-
-    $posts=$postobj->getAllPostByPage($PageLength,$Page);
-}
-
-
-?>
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-
-
-
-            <!-- First Blog Post -->
-           
-			<?php
-//            برای اینکه زمانیکه در دسته بندی پستی وجود نداشت بنویسد پستی وجود ندارد
-            if (count($posts)<1){
-                echo "<h2>هیچ پستی وجود ندارد</h2>";
-            }
-//	برای اینکه فقط پستهایی که پابلیش شده اند را نمایش دهد ددر صفحه اصلی
-				foreach($posts as $post) {
-				    if ($post["Status"] != "Publish") {
-//				        اجرا نکن
-                continue;
-                    }
-				    ?>
-
-			 
-		 <h2>
-<!--             برای اینکه در صفحه اصلی روی هر لینکی کایک کردیم برود به صفحه جدید و توضیحاتش را نمایش دهد-->
-                <a href="/Post/<?=$post["id"]?>"><?=$post["Title"]?></a>
-            </h2>
-			
-			 <p class="lead">
-<!--                 برای نویسند یور آر ال کار نکرد بعداد آدرس دهی آن را به صورت عکس و غیره تغییر بده-->
-                نویسنده: <a href="?Author=<?=$post["Author"]?>"><?=$post["Author"]?></a>
-            </p>
-			 <p>ساعت ثبت پست:<span class="fa fa-clock "></span><?=$post["Date"]?></p>
-			 <hr>
-            <img class="img-fluid" src="/images/<?=$post["Image"]?>" alt="">
-            <hr>
-<!--                    برای اینکه کل متن رانمایش ندهد و تعداد مشخص نمابیش بدهد و با زدن رید مور همه را نشان بدهد از تابع ساب اس تی ار استفاده میکنیم-->
-			<p><?=substr($post["Content"],0,70)?></p>
-<!--			 یعنی زمانیکه ریدمور زده شده برود به همان صفحه ای که پی ای دی آن را صدازدیم-->
-            <a class="btn btn-primary" href="/Post/<?=$post["id"]?>">توضیحات بیشتر.. <span class="fa fa-angle-right"></span></a>
-
-            <hr>
-			
-				<?php }
-			?>
-<!--         برای اینکه در اخر صفحه متل گوگل برای شماره صفحات پیج کانت لینک بگذاریم -->
-            <nav>
-                <ul class="pagination">
-                    <?php
-                        for ($i=1;$i<=$PageCount;$i++){ ?>
-<!--                           به تعداد صفحاتی که داریم لینک درست کنیم-->
-
-                        <li class="page-item <?php if ($i==$Page) echo "active" ?>" ><a href="?Page=<?=$i?>" class="page-link"><?=$i?></a></li>
-                       <?php }
-                    ?>
-                </ul>
-            </nav>
-
-
-
-            <!-- Pager -->
-<!--            <ul class="">-->
-<!--                <li class="btn  btn-outline-primary">-->
-<!--                    <a href="#">&larr; Older</a>-->
-<!--                </li>-->
-<!--                <li class="btn float-md-right btn-outline-primary">-->
-<!--                    <a href="#">Newer &rarr;</a>-->
-<!--                </li>-->
-<!--            </ul>-->
+<!--بالای هدر-->
+<?php include_once "inc/header.php"?>
+<?php include_once "inc/navigation.php"?>
+<!-- End Header -->
+<!-- Start Slider -->
+<!-- End Slider -->
+<!-- Start Featured -->
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h2 class="rounded mt-1 bg-light"><marquee direction="right">جدیدترین خبرهای دنیای مجازی و تجارت الکترونیک در وبسایت IT FIELD</marquee></h2>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <?php /*?><?php include_once "inc/Slider.php"?><?php */?>
+</div>
+<div class="row">
+   
+<!--سایدبار سمت راست-->
+    <div class="row col-md-3 mb-3 ml-5 mr-1">
+		<?php include "SidebarRight.php" ?>
+	</div>
+<!--	پست ها-->
+	<div class="col-md-5 ml-4 mr-1">
+		<h3 class="text-center bg_semi_dark mt-3 ml-3">  آخرین مطالب</h3>
+		<?php include_once "Posts.php"?>
+		</div>
+<!--		 سایدبار سمت چپ -->
+	<div class="col-md-3 ml-1 ">
+     <?php include "SidebarLeft.php" ?>
         </div>
-
-        <!-- Blog Sidebar Widgets Column -->
-        <?php include "inc/sidebar.php" ?>
-           
-
-<?php include "inc/footer.php" ?>
+	</div>
+	      
+</section>
+<?php include_once "inc/Sidebar.php"?>
+<?php include_once "inc/Footer.php"?>

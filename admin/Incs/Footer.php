@@ -1,7 +1,7 @@
   <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © HAIB.IR Website</span>
+            <span>Copyright ©IT FIELD Website</span>
           </div>
         </div>
       </footer>
@@ -41,20 +41,20 @@
   </div>
 
 
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/cms-p/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/cms-p/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="/vendor/chart.js/Chart.min.js"></script>
-  <script src="/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="/cms-p/vendor/chart.js/Chart.min.js"></script>
+  <script src="/cms-p/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="/cms-p/vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/js/sb-admin.min.js"></script>
+  <script src="/cms-p/js/sb-admin.min.js"></script>
 <!--برای استفاده از دیتا تیبل آماده یک صفحه جدید جاوا اسکریپت درست کردیم و لینک انرا اضافه--> 
-<script src="/js/datatables.js"></script>
+<script src="/cms-p/js/datatables.js"></script>
   <!-- Demo scripts for this page-->
   <script src="../js/demo/datatables-demo.js"></script>
   <script src="../js/demo/chart-area-demo.js"></script>

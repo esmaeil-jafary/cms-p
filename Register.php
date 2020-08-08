@@ -1,5 +1,4 @@
 <?php include "inc/header.php" ?>
-<?php include "inc/navigation.php" ?>
 
 <?php
 include_once "inc/classes/db.php";
@@ -40,11 +39,11 @@ if ($ExistUser){
     }
    }
 if (!$ErrorMsg){
-    header("location: index.php");
+    header("location:index.php");
 }
 }
-
 ?>
+
 <!-- Page Content -->
 <div class="container">
 

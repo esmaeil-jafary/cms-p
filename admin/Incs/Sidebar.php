@@ -1,7 +1,7 @@
-<ul class="sidebar navbar-nav">
+<ul class="navbar list-unstyled">
 	<li class="nav-item dropdown">
 		<a class="nav-link dropdown-toggle" href="#" role="button" id="post-dropdown" data-toggle="dropdown" aria-expanded="false"  >
-			<i class="fas fa-fw fa-tachometer-alt"></i>
+			<i class="fas fa-fw fa-project-diagram"></i>
 			<span>پست ها</span> 
 		</a>
 		<div class="dropdown-menu" aria-labelledby="post-dropdown">
@@ -10,14 +10,15 @@
 		</div>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="Category.php" ></i>
+		<a class="nav-link" href="Category.php" >
+            <i class="fa fa-layer-group"></i>
 			<span> دسته بندی ها</span> 
 		</a>
 		
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" href="Comment.php">
-			<i class="fas fa-fw fa-comment-alt"></i>
+			<i class="fas fa-fw fa-comment-alt h3"></i>
 			<span> کامنت ها </span> 
 		</a>
 	</li>
@@ -34,9 +35,16 @@
       </li>
 	 <li class="nav-item ">
         <a class="nav-link" href="Profile.php" >
-          <i class="fas fa-fw fa-user-alt"></i>
-          <span>پروفایل</span>
+          <i class="fas fa-fw fa-ad"></i>
+          <span>پروفایل مدیر</span>
         </a>
       </li>
+    <li class="nav-item">
+        <a class="nav-link" href="News.php" ></i>
+            <i class="fas fa-fw fa-newspaper"></i>
+            <span> خبرها</span>
+        </a>
+
+    </li>
      
     </ul>

@@ -1,5 +1,5 @@
 <?php include "Incs/header.php" ?>
-<?php include "Incs/Navigation.php" ?>
+
 <?php
 $ReportObj=new Report();
 
@@ -8,11 +8,13 @@ $ReportObj=new Report();
 
 
 
-  <div id="wrapper">
+<?php include "Incs/Navigation.php" ?>
 
     <!-- Sidebar -->
     <?php include "Incs/Sidebar.php" ?>
 
+    <div class="row" id="wrapper">
+    <div class=" w-100">
     <div id="content-wrapper">
 
       <div class="container-fluid">
@@ -24,7 +26,7 @@ $ReportObj=new Report();
           </li>
           <li class="breadcrumb-item active">مدیر</li>
         </ol>
-        <h1> خوش آمدی: <?=$_SESSION["FirstName"]." ".$_SESSION["LastName"]?></h1>
+      <p class="text-info h3">خوش آمدی:  <u class="text-danger"><?=$_SESSION["FirstName"]." ".$_SESSION["LastName"]?></u></p>
         <!-- Icon Cards-->
 
 
@@ -37,7 +39,7 @@ $ReportObj=new Report();
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="card bg-primary text-white">
-                <div class="card-header">
+                <div class="card-header ">
                     <!--                ?-->
                     <div class="container">
                         <div class="row">
@@ -116,7 +118,7 @@ $ReportObj=new Report();
         </div>
 
         <div class="col-lg-3 col-md-6">
-            <div class="card bg-warning text-white">
+            <div class="card bg-danger text-white">
                 <div class="card-header">
                     <div class="container">
                         <div class="row">
@@ -142,6 +144,7 @@ $ReportObj=new Report();
         </div>
         <div class="col-md-12" id="container"></div>
     </div>
+
 <!--برای چارت درست کردن در پنل ادمین-->
 <script>    var chart = Highcharts.chart('container', {
 
@@ -250,7 +253,7 @@ $ReportObj=new Report();
     chart.setSize(null);
     });
 </script>
-
+    </div>
     <!-- Sticky Footer -->
 
    <?php include "Incs/Footer.php" ?>

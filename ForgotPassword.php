@@ -25,10 +25,10 @@ $Token=bin2hex(openssl_random_pseudo_bytes(16));
     $UserObj->UpdateToken($User["id"],$Token );
     $Uid=$User["id"];
 //    خطا دارد نمیدانم چرا لینک تگ ا  کار نمیکند
-  $EmailText=" Link ra dar mororgar copy konid : <a href='http://localhost/Reset?Token=$Token&Uid=$Uid'> Click Me </a>";
+  $EmailText=" Link ra dar mororgar copy konid : <a href='http://localhost/cms-p/Reset?Token=$Token&Uid=$Uid'> Click Me </a>";
 
 if ($EmailObj->SendEmile("ResetPassword",$EmailText,$Email)){
-header("Location:/index");
+header("Location:/cms-p/index.php");
 }
 $ErrorMsg="ارسال ایمیل موفقیت آمیز نبود";
 }else{

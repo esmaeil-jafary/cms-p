@@ -1,110 +1,51 @@
-<div class="col-md-4">
-<!--    الان می خواهیم بگوییم وقتی لاگین کرده بودیم دیگر قسمت ورود و ثبت نام را نشان نده-->
-<!--    میگوییم اگر یوزر ورود نکرده بود لاگین را نمایش بده-->
-    <?php
-    if (!isset($_SESSION["UserName"])){ ?>
-
-    <div class="card bg-light mb-4">
-
-        <div class="card-header">
-            <div class="row">
-            <div class="col-md-6">
-                <h4>ثبت نام/ورود</h4>
-            </div>
-            <div class="col-md-6">
-            <a href="Register" class="btn btn-secondary">ثبت نام</a>
-            </div>
-        </div>
-        <div class="card-body">
-            <form method="post" action="Login.php" >
-                <input class="form-control mb-1" name="UserName" placeholder="نام کاربری را وارد نمایید">
-                <div class="input-group">
-                    <input type="password" name="Password" class="form-control" placeholder="کلمه عبور را وارد نمایید">
-
-                       <button name="LoginSubmit" class="btn btn-primary " type="submit">ورود</button>
-                </span>
-                </div>
-            </form>
-<!--            برای قسمت فراموش گردن پسورد و ارسال مجدد پسور. و یک نقطه اسلش در آدرس دهی یعنی همینجا که هستیمد-->
-    <a href="./ForgotPassword">رمز عبور را فراموش کرده ام؟</a>
-        </div>
-        <!-- /.input-group -->
-    </div>
-       <?php }
-        ?>
-    <!-- Blog Search Well -->
-    <div class="card bg-light">
-        <div class="card-header">
-            <h4>Blog Search</h4>
-        </div>
-        <div class="card-body">
-			<form method="post" action="/Search.php" >
-            <div class="input-group">
-                <input name="SearchQuery" type="text" class="form-control">
-                <span class="btn-group">
-                       <button name="SearchSubmit" class="btn btn-primary " type="submit">
-                      <span class="fa fa-search "></span>
-                   </button>
-                </span>
-		    </div>
-			</form>
-
-        </div>
-        <!-- /.input-group -->
-    </div>
-
     <!-- Blog Categories Well -->
-    <div class="card bg-light mt-4">
-        <div class="card-header">
-            <h4>Blog Categories</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-               <?php
-            include_once "inc/classes/db.php" ;
-            include_once "inc/classes/Categorys_cls.php" ;
-            $cat=new Category ();
-            $cats=$cat->getAllCategories();
-                	
-		$cnt=count($cats);
-				?>
-				<div class="col-lg-6">
-                    <ul class="list-unstyled">
-		<?php				
-      for($i=0;$i<=$cnt/2;$i++){ ?>
-<!--          الان برای اینکه وقتی در دسته بندی ها را در سایدبار کلیک می کنیم برود بر بروی آن دسته لینک تگ ا را قرا می دیهی-->
-       <li><a href="/index/Category/<?=$cats[$i]["id"]?>"><?=$cats[$i]["name"]?></a></li>
-      <?php } ?>
-             </ul>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <!-- نمایش گتگوری در دو ستون و اینجا ستون دوم -->
-                        <?php
-                        for ($i = $cnt/2 + 1 ; $i < $cnt ; $i++) {
-//                            ی دسته بندی دوم هم مانند بالا انجام
-                            $href="/index/Category/{$cats[$i]["id"] } " ;
-                      echo ' <li><a href="'.$href.'"> ' . $cats[$i]["name"]. '</a> </li>';
-                      }
-                        ?>
-                    </ul>
+    <div class="row">
+
+<span class="col-md-1"></span>
+        <span class="col-md-10">
+        <section class="featured-section section-ptb-3" data-aos="fade-up">
+            <div class="featured-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 mb-xm-5">
+                            <div class="single-featured text-center">
+                                <div class="feature-thumb">
+                                    <img class="img-fluid" src="assets/images/icon_01.png" alt="feature" />
+                                </div>
+                                <h4>مهارت کسب کن </h4>
+                                <div class="feature-text">
+                                    <p>زندگی در دنیای مجازی بدون آموزش و کسب اطلاعات و اخبار بسیار سخت می باشد. پس باید بروز بود </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-xm-5">
+                            <div class="single-featured text-center active-item">
+                                <div class="feature-thumb">
+                                    <img class="img-fluid" src="assets/images/icon_02.png" alt="feature" />
+                                </div>
+                                <h4>مفیدمفید وقت بزار</h4>
+                                <div class="feature-text">
+                                    <p> از زمان باید بهترین استفاده را نمود و برای این امر آموزش مدیریت زمان الزامی است</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-xm-5">
+                            <div class="single-featured text-center">
+                                <div class="feature-thumb">
+                                    <img class="img-fluid" src="assets/images/icon_03.png" alt="feature" />
+                                </div>
+                                <h4> رشتت رو انتخاب کن</h4>
+                                <div class="feature-text">
+                                    <p>زمینه ها برای فراگیری بسیار است ولی باید به علایق و سلایق و درون خود نگاه کرد که علاقه مندی به کدام سمت است</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- /.col-lg-6 -->
-        </div>
-        <!-- /.row -->
-    </div>
+        </section>
+</span>
+        <span class="col-md-1"></span>
 
-    <!-- Side Widget Well -->
-    <div class="card bg-light mt-4">
-        <div class="card-header">
-            <h4>Side Widget Well</h4>
-        </div>
-        <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci
-                accusamus
-                laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-        </div>
-    </div>
 
 </div>

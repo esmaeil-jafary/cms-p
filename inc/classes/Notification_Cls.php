@@ -16,6 +16,6 @@ public function sendNotification($Data){
     );
 
 
-    $pusher->trigger('my-channel', 'Register', $data);
+    $pusher->trigger('my-channel', 'Register', $Data);
 }
 }
