@@ -3,7 +3,7 @@ class news extends DB
 {
     public function getallNews()
     {
-		$postAsc="select * from news,order by Date";
+		$postAsc="select * from news";
         return $this->connect()->query($postAsc)->fetchAll (PDO::FETCH_ASSOC);
     }
 //  دیلیت کردن
@@ -25,8 +25,8 @@ class news extends DB
 //	آبدیت کردن
     public function getUpNews($id){
         $cnn=$this->connect();
-        $qIt=$cnn->quote("$id");
-        return $cnn->query("select * from news where id=$qIt")->fetchAll(PDO::FETCH_ASSOC);
+        $qId=$cnn->quote("$id");
+        return $cnn->query("select * from news where id=$qId")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function updateNews($updateId, $updateName, $updateDescription)
@@ -38,14 +38,6 @@ class news extends DB
         $cnn->query(" update news set Title = $qName , Content = $qDescription, Date=new() where id = $qId ");
 
     }
-//    برای منو ها
-//    public function getMenu(){
-//        return $this->connect()->query("select * from menu")->fetchAll(PDO::FETCH_ASSOC);
-//    }
-//    public function searchMenu($q){
-//        $cn=$this->connect();
-//        $q=$cn->quote($q);
-//        return $cn->query("select * from menu where name like concat('',$q,'')")->fetchAll(PDO::FETCH_ASSOC);
-//    }
+
 }
 ?>

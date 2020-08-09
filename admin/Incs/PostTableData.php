@@ -1,4 +1,3 @@
-
 <?php
 $Postobj=new Post();
 $UserObj=new User();
@@ -53,8 +52,8 @@ if (isset($_POST['bulkSubmit'])){
     </div>
 
     <div class="col-md-3">
-    <input type="submit" name="bulkSubmit" value="Apply" class="btn btn-success">
-        <a href="?Type=NewPost" class="btn btn-primary">AddNew</a>
+    <input type="submit" name="bulkSubmit" value="ثبت" class="btn btn-success">
+        <a href="?Type=NewPost" class="btn btn-primary">اضافه کردن</a>
     </div>
     </div>
 <table id="PostTable" class="table table-bordered table-hover">
@@ -94,7 +93,7 @@ echo $cat[0]["name"];
             <td><?=$post["Date"]?></td>
             <!--            برای اینکه خود عکس را نشان دهد-->
             <td><img class="img-fluid" width="100" src="../images/<?=$post["Image"]?>"></td>
-            <td><?=$post["Content"]?></td>
+		<td><?= substr($post["Content"], 0, 200) ?></td>
             <td><?=$post["Tage"]?></td>
             <td><?=$post["Comment_Count"]?></td>
             <td><?=$post["Status"]?></td>
