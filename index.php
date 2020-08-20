@@ -33,5 +33,5 @@
 	</div>
 	      
 </section>
-<?php include_once "inc/Sidebar.php"?>
+<?php include_once "inc/Advertise.php"?>
 <?php include_once "inc/Footer.php"?>
