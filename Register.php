@@ -32,7 +32,7 @@ if ($ExistUser){
         $UserObj->RegisterUser($Username,$Email,$Hash);
 //        برای ارسال ناتیفیکیشن
         $NotifObj=new Notification();
-        $data=["Message"=>"$Username Just Registered."];
+        $data=["Message"=>"$Username Just Registered.php"];
         $NotifObj->sendNotification($data);
     }catch (Exception $e){
         $ErrorMsg="ثبت نام انجام نشد ایمیل قبلا ثبت شده است";

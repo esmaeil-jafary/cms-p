@@ -1,5 +1,4 @@
 <?php include "inc/header.php" ?>
-
 <?php
 include_once "inc/classes/Post_Cls.php";
 include_once "inc/classes/Comment_cls.php";
@@ -25,8 +24,8 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
 
 ?>
 <div class="row">
-<div class="col-md-3"></div>
-<div class="col-md-6 card bg-light">
+<div class="col-md-2 mr-5"></div>
+<div class="col-md-8 card bg-light mr-1">
 <ul class="list-unstyled">
 	<li class="card-header mb-1 h3"><a href="Post.php?Pid=<?= $post["id"] ?>"><?= $post["Title"] ?></a></li>	
 	<li class="card-header mb-1 h3">
@@ -59,7 +58,7 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
                         </div>
                         <div class="input-group">
                             <label for="Content">محتوا</label>
-                            <textarea name="Content"  class="form-group"></textarea>
+                            <textarea name="Content"  class="form-group w-100"></textarea>
                             <span class="btn-group">
                       
                       <span class="fa fa-search "></span>
@@ -107,7 +106,19 @@ $PostComment = $CommentObj->GetPostComment($_GET["Pid"]);
 	
 </div>
 
-	
+
+</div>
+<div class="row">
+<div class="col-md-1"></div>
+    <div class="col-md-5 mr-5">
+    <?php include "SidebarRight.php" ?>
+    </div>
+    
+    <div class="col-md-5 ml-4">
+    <?php include "SidebarLeft.php" ?>
+    </div>
+    
+
 </div>
 
 
