@@ -33,7 +33,7 @@
 
 
 
-    <div class="col-md-4">
+    <div class="col-md-5">
         <nav class="navbar navbar-expand-md navbar-dark " >
             <button class="navbar-toggler bg-info  " type="button" data-toggle="collapse" data-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" value="منو" >
@@ -155,7 +155,7 @@
 
 
                 <li class="nav-link">
-                    <a class="nav-link bg-danger rounded" href="/cms-p/admin">مدیریت</a>
+                    <a class="nav-link bg-warning rounded" href="/cms-p/admin">مدیریت</a>
                 </li>
             <?php }
             ?>
@@ -168,7 +168,7 @@
         </nav>
     </div>
 
-        <div class="col-md-4 mt-1">
+        <div class="col-md-3 mt-1">
             <form class="navbar-form navbar-left" method="post" action="/cms-p/Search.php">
                 <div class="input-group">
                     <input class="form-control" name="SearchQuery" type="text" placeholder="جستجو کنید" required>

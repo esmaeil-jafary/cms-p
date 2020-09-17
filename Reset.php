@@ -24,12 +24,12 @@ if (isset($_POST["Reset"])){
 //    الان باید دنبال یک یو ایدی بگردیم و ببینیم آیا توکن ان همین است یا خیر
     $User=$UserObj->getUser($Uid);
     if ($User["Token"]===$Token){
-//        یعنی اگر در جدول یوزر یو آیدی مورد نظر توکن مورد نظر موجود بود اجازه اضافه کردن پسورد را بده
+//        یعنی اگرر در جدول یوزر یو آیدی مورد نظر توکن مورد نظر موجود بود اجازه اضافه کردن پسورد را بده
 
 //        حالا باید پسورد هشت شده جدید را بعنوان پسورد جدید ذخیره بکنیم
 
         $UserObj->UpdateUser($User["id"],$User["UserName"],$Password,$User["FirstName"],$User["LastName"],$User["Email"],$User["Rol"]);
-        header("Location: /cms-p/index");
+        header("Location:/cms-p/index");
     }else{
         $ErrorMsg="توکن امنیتی شما صحیح نمی باشد";
     }

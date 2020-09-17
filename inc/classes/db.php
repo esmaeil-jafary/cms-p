@@ -14,7 +14,7 @@ class DB
         $this->serverName="localhost";
         $this->username="root";
         $this->password="";
-        $this->dbName="dbcms";
+        $this->dbName="cms";
         $this->charset="utf8mb4";
         try {
             $dsn = "mysql:host=$this->serverName;dbname=$this->dbName;charset=$this->charset";
