@@ -17,7 +17,7 @@
 </div>
 <div class="row">
    
-<!--سایدبار سمت راست-->
+<!--سایدبارر سمت راست-->
     <div class="row col-md-3 mb-3 ml-5 mr-1">
 		<?php include "SidebarRight.php" ?>
 	</div>
