@@ -13,7 +13,7 @@ class DB
 
         $this->serverName="localhost";
         $this->username="root";
-        $this->password="";
+        $this->password="asd";
         $this->dbName="cms";
         $this->charset="utf8mb4";
         try {
