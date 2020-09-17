@@ -33,7 +33,7 @@ $ReportObj=new Report();
 
 
       </div>
-      <!-- /.container-fluid -->
+      <!-- /.container-fluide-->
 
 
     <div class="row">
